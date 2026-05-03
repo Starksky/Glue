@@ -1,53 +1,86 @@
 ﻿using System;
-using System.Threading;
-using Cysharp.Threading.Tasks;
-using Project.Shared.Scripts.ForMessages;
+using Project.Core.Player.Scripts;
+using R3;
 using UnityEngine;
-using UnityEngine.Timeline;
-using Zenject;
 
 namespace Project.Core.Surfaces.Scripts
 {
-    public class RoughSurfaceHandler : BaseMonoMessage
+    
+    public class RoughSurfaceHandler : MonoBehaviour
     {
-        [SerializeField] private float delayAction;
-        [SerializeField] private SignalAsset message;
-        
-        private CancellationTokenSource _cancellationTokenSource;
+        [SerializeField] private CompositeCollider2D colliderSurface;
 
-        [Inject] private MessageBrokersService _messageBrokersService;
-        private bool CanExecute => _cancellationTokenSource == null;
-        
-        public void OnExecute(Collider2D col)
+        private CompositeDisposable _compositeDisposable = new CompositeDisposable();
+        private RestartableTimer _restartableTimer;
+        private SlingshotHandler _slingshotHandler;
+        private bool _isAttached;
+        private CompositeDisposable _compositeDisposableTrigger = new CompositeDisposable();
+
+        private void Awake()
         {
-            if (!CanExecute)
+            _restartableTimer = new RestartableTimer(2f);
+            _restartableTimer.OnCompleted.Subscribe(_ => _slingshotHandler.ToAwake()).AddTo(_compositeDisposable);
+        }
+        
+        private void OnDestroy()
+        {
+            _compositeDisposable.Dispose();
+            _compositeDisposableTrigger.Dispose();
+            _restartableTimer.Dispose();
+        }
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (!other.CompareTag("Player"))
                 return;
             
-            StartExecute().Forget();
+            Debug.Log("enter");
+            if (!_slingshotHandler)
+                _slingshotHandler = other.transform.root.GetComponent<SlingshotHandler>();
+            
+            _slingshotHandler.EventEnterTrigger.Subscribe(_ =>
+            {
+                if (_ == colliderSurface)
+                    return;
+                
+                _restartableTimer.Stop();
+                _slingshotHandler.ToUnAwake();
+                _compositeDisposableTrigger.Clear();
+            }).AddTo(_compositeDisposableTrigger);
+
+            _restartableTimer.Start();
+        }
+        
+        private void OnTriggerExit2D(Collider2D other)
+        {
+            if (!other.CompareTag("Player"))
+                return;
+            
+            Debug.Log("exit");
+            _compositeDisposableTrigger.Clear();
+            _restartableTimer.Stop();
+            _slingshotHandler.ToUnAwake();
         }
 
-        public void OnCancel()
+        private void Update()
         {
-            _cancellationTokenSource?.Cancel();
+            _restartableTimer.Update();
         }
-
-        private async UniTask StartExecute()
+        
+        private void FixedUpdate()
         {
-            _cancellationTokenSource?.Cancel();
-            _cancellationTokenSource = new CancellationTokenSource();
+            if (!_restartableTimer.IsCompleted)
+                return;
             
-            try
-            {
-                await UniTask.WaitForSeconds(delayAction, cancellationToken: _cancellationTokenSource.Token);
-                _messageBrokersService.Publish(Chanel, message);
-            }
-            catch (Exception)
-            {
-                //ignore
-            }
+            var position = _slingshotHandler.transform.position;
+            var contact = colliderSurface.ClosestPoint(position);
+            var dirConnect = (contact - (Vector2)position).normalized;
             
-            _cancellationTokenSource?.Dispose();
-            _cancellationTokenSource = null;
+            Debug.DrawRay(position,  dirConnect, Color.magenta, 1f);
+            
+            _slingshotHandler.ApplyForce(dirConnect
+                                         * -Physics2D.gravity.y
+                                         * 1f);
         }
     }
 }

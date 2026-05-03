@@ -7,7 +7,7 @@ using Random = UnityEngine.Random;
 [RequireComponent(typeof(Rigidbody2D), 
     typeof(CircleCollider2D), 
     typeof(PlayerInput))]
-public class SlingshotController : MonoBehaviour
+public class OldSlingshotController : MonoBehaviour
 {
     [Header("Визуал")]
     [SerializeField] private Transform hand;
