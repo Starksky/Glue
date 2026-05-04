@@ -3,6 +3,7 @@ using SaintsField.Playa;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 namespace Project.Core.Player.Scripts
 {
@@ -15,11 +16,14 @@ namespace Project.Core.Player.Scripts
         [SerializeField, ReadOnly, GetComponent(typeof(SlingshotHandler))]
         private SlingshotHandler slingshotHandler;
 
+        [SerializeField] private Collider2D dragCollider2D;
+
         [LayoutStart("Events", ELayout.Foldout)]
         [SerializeField] private UnityEvent<Vector2> EventBeginDrag;
         [SerializeField] private UnityEvent<Vector2> EventUpdateDrag;
         [SerializeField] private UnityEvent<Vector2> EventEndDrag;
 
+        private Bounds _boundsClick;
         private Camera _camera;
         private InputAction _dragAction;
         private InputAction _dragPositionAction;
@@ -27,6 +31,7 @@ namespace Project.Core.Player.Scripts
 
         private void OnEnable()
         {
+            _boundsClick.extents = Vector3.one * 2f;
             _camera = Camera.main;
             _dragAction = playerInput.actions["Drag"];
             _dragPositionAction = playerInput.actions["DragPosition"];
@@ -55,7 +60,7 @@ namespace Project.Core.Player.Scripts
                 _dragPositionAction.Disable();
         }
 
-        private void FixedUpdate()
+        private void LateUpdate()
         {
             if (_isDragging)
             {
@@ -73,8 +78,10 @@ namespace Project.Core.Player.Scripts
 
         private void OnDragStarted(InputAction.CallbackContext context)
         {
+            _boundsClick.center = transform.position;
+            
             var mousePosition = GetMousePosition();
-            if (/*slingshotHandler.IsFlying || */!slingshotHandler.IsOverlapPoint(mousePosition))
+            if (slingshotHandler.IsFlying || !dragCollider2D.OverlapPoint(mousePosition))
                 return;
             
             _isDragging = true;

@@ -38,6 +38,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3617576910030649311
 SpriteRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -83,6 +84,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: cf9640fd176cf2145a46394cfa6ba089, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -92,7 +94,6 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!50 &252763748723791027
 Rigidbody2D:
@@ -185,11 +186,11 @@ MonoBehaviour:
   autoConfigureConnectedAnchor: 0
   autoConfigureDistance: 0
   jointFrequency: 5
-  jointDamping: 0.5
+  jointDamping: 1
   useLimits: 0
   lowerAngle: 0
   upperAngle: 15
-  collisionRadius: 0.5
+  collisionRadius: 0.8
 --- !u!232 &1319696244021009076
 DistanceJoint2D:
   m_ObjectHideFlags: 0
@@ -208,7 +209,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0.375, y: -0.375}
   m_AutoConfigureDistance: 0
-  m_Distance: 0.5
+  m_Distance: 0.4
   m_MaxDistanceOnly: 1
 --- !u!1 &476878505030268479
 GameObject:
@@ -248,6 +249,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2615457658839222938
 SpriteRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -293,6 +295,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: cf9640fd176cf2145a46394cfa6ba089, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -302,7 +305,6 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!50 &1481890033430669630
 Rigidbody2D:
@@ -395,11 +397,11 @@ MonoBehaviour:
   autoConfigureConnectedAnchor: 0
   autoConfigureDistance: 0
   jointFrequency: 5
-  jointDamping: 0.5
+  jointDamping: 1
   useLimits: 0
   lowerAngle: 0
   upperAngle: 15
-  collisionRadius: 0.5
+  collisionRadius: 0.8
 --- !u!232 &3641340026403537310
 DistanceJoint2D:
   m_ObjectHideFlags: 0
@@ -418,7 +420,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: -0.5, y: 0}
   m_AutoConfigureDistance: 0
-  m_Distance: 0.5
+  m_Distance: 0.4
   m_MaxDistanceOnly: 1
 --- !u!1 &971373255697416081
 GameObject:
@@ -458,6 +460,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &9189853776536868614
 SpriteRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -503,6 +506,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: cf9640fd176cf2145a46394cfa6ba089, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -512,7 +516,6 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!50 &3483130256737829953
 Rigidbody2D:
@@ -605,11 +608,11 @@ MonoBehaviour:
   autoConfigureConnectedAnchor: 0
   autoConfigureDistance: 0
   jointFrequency: 5
-  jointDamping: 0.5
+  jointDamping: 1
   useLimits: 0
   lowerAngle: 0
   upperAngle: 15
-  collisionRadius: 0.5
+  collisionRadius: 0.8
 --- !u!232 &3633314598520716788
 DistanceJoint2D:
   m_ObjectHideFlags: 0
@@ -628,7 +631,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0.5, y: 0}
   m_AutoConfigureDistance: 0
-  m_Distance: 0.5
+  m_Distance: 0.4
   m_MaxDistanceOnly: 1
 --- !u!1 &1818343212479581098
 GameObject:
@@ -664,7 +667,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!120 &7944881686489460341
 LineRenderer:
-  serializedVersion: 2
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -710,6 +713,7 @@ LineRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_Positions:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
@@ -790,7 +794,6 @@ LineRenderer:
     textureScale: {x: 1, y: 1}
     shadowBias: 0.5
     generateLightingData: 0
-  m_MaskInteraction: 0
   m_UseWorldSpace: 0
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
@@ -829,6 +832,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5377681711282838526
 SpriteRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -874,6 +878,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
+  m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: cf9640fd176cf2145a46394cfa6ba089, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
@@ -883,7 +888,6 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!331 &581389345107838564
 SpriteMask:
@@ -932,6 +936,7 @@ SpriteMask:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_Sprite: {fileID: 0}
   m_MaskAlphaCutoff: 0.5
   m_FrontSortingLayerID: 0
@@ -1088,6 +1093,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3999075508050236799
 SpriteRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1133,6 +1139,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: cf9640fd176cf2145a46394cfa6ba089, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1142,7 +1149,6 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!50 &4098298257447920492
 Rigidbody2D:
@@ -1235,11 +1241,11 @@ MonoBehaviour:
   autoConfigureConnectedAnchor: 0
   autoConfigureDistance: 0
   jointFrequency: 5
-  jointDamping: 0.5
+  jointDamping: 1
   useLimits: 0
   lowerAngle: 0
   upperAngle: 15
-  collisionRadius: 0.5
+  collisionRadius: 0.8
 --- !u!232 &2704620195120536200
 DistanceJoint2D:
   m_ObjectHideFlags: 0
@@ -1258,7 +1264,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: -0.5}
   m_AutoConfigureDistance: 0
-  m_Distance: 0.5
+  m_Distance: 0.4
   m_MaxDistanceOnly: 1
 --- !u!1 &2626119961771449159
 GameObject:
@@ -1397,6 +1403,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1175503847365109106
 SpriteRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1442,6 +1449,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
+  m_MaskInteraction: 2
   m_Sprite: {fileID: 21300000, guid: cf9640fd176cf2145a46394cfa6ba089, type: 3}
   m_Color: {r: 0.41960788, g: 0.87843144, b: 0.20392159, a: 1}
   m_FlipX: 0
@@ -1451,7 +1459,6 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 2
   m_SpriteSortPoint: 0
 --- !u!1 &3526131660653068500
 GameObject:
@@ -1571,6 +1578,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7836691120170604533
 SpriteRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1616,6 +1624,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: cf9640fd176cf2145a46394cfa6ba089, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1625,7 +1634,6 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!50 &7408675554456960708
 Rigidbody2D:
@@ -1718,11 +1726,11 @@ MonoBehaviour:
   autoConfigureConnectedAnchor: 0
   autoConfigureDistance: 0
   jointFrequency: 5
-  jointDamping: 0.5
+  jointDamping: 1
   useLimits: 0
   lowerAngle: 0
   upperAngle: 15
-  collisionRadius: 0.5
+  collisionRadius: 0.8
 --- !u!232 &3351748609533797761
 DistanceJoint2D:
   m_ObjectHideFlags: 0
@@ -1741,7 +1749,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0.375, y: 0.37500006}
   m_AutoConfigureDistance: 0
-  m_Distance: 0.5
+  m_Distance: 0.4
   m_MaxDistanceOnly: 1
 --- !u!1 &4789600836132660446
 GameObject:
@@ -1781,6 +1789,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4374889541929207431
 SpriteRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1826,6 +1835,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: cf9640fd176cf2145a46394cfa6ba089, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1835,7 +1845,6 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!50 &8730320505092042641
 Rigidbody2D:
@@ -1928,11 +1937,11 @@ MonoBehaviour:
   autoConfigureConnectedAnchor: 0
   autoConfigureDistance: 0
   jointFrequency: 5
-  jointDamping: 0.5
+  jointDamping: 1
   useLimits: 0
   lowerAngle: 0
   upperAngle: 15
-  collisionRadius: 0.5
+  collisionRadius: 0.8
 --- !u!232 &2031108244801857619
 DistanceJoint2D:
   m_ObjectHideFlags: 0
@@ -1951,8 +1960,76 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0.50000006}
   m_AutoConfigureDistance: 0
-  m_Distance: 0.5
+  m_Distance: 0.4
   m_MaxDistanceOnly: 1
+--- !u!1 &4907248693905614358
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4996706622360559974}
+  - component: {fileID: 2040037901106602208}
+  m_Layer: 2
+  m_Name: DragCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4996706622360559974
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4907248693905614358}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7674609742827578133}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &2040037901106602208
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4907248693905614358}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 2
 --- !u!1 &5415789889779028742
 GameObject:
   m_ObjectHideFlags: 0
@@ -2095,6 +2172,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2773569681280808888
 SpriteRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2140,6 +2218,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
+  m_MaskInteraction: 2
   m_Sprite: {fileID: 21300000, guid: cf9640fd176cf2145a46394cfa6ba089, type: 3}
   m_Color: {r: 0.23529413, g: 0.6666667, b: 0.0627451, a: 1}
   m_FlipX: 0
@@ -2149,7 +2228,6 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 2
   m_SpriteSortPoint: 0
 --- !u!1 &6005094323317189590
 GameObject:
@@ -2185,7 +2263,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!120 &9165551631107643150
 LineRenderer:
-  serializedVersion: 2
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2231,6 +2309,7 @@ LineRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_Positions:
   - {x: 0, y: 2, z: 0}
   - {x: 0, y: 0, z: 1}
@@ -2289,7 +2368,6 @@ LineRenderer:
     textureScale: {x: 2.5, y: 1}
     shadowBias: 0.5
     generateLightingData: 0
-  m_MaskInteraction: 0
   m_UseWorldSpace: 0
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
@@ -2329,6 +2407,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1971053207 &8944250486012917735
 SpriteShapeRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2375,8 +2454,8 @@ SpriteShapeRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_MaskInteraction: 0
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_ShapeTexture: {fileID: 2800000, guid: 1a0de8cb6be0e514aa1265ef09c2201c, type: 3}
   m_Sprites:
   - {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
@@ -2553,6 +2632,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &711569054301944529
 SpriteRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2598,6 +2678,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: cf9640fd176cf2145a46394cfa6ba089, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2607,7 +2688,6 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!50 &6545219933624947361
 Rigidbody2D:
@@ -2700,11 +2780,11 @@ MonoBehaviour:
   autoConfigureConnectedAnchor: 0
   autoConfigureDistance: 0
   jointFrequency: 5
-  jointDamping: 0.5
+  jointDamping: 1
   useLimits: 0
   lowerAngle: 0
   upperAngle: 15
-  collisionRadius: 0.5
+  collisionRadius: 0.8
 --- !u!232 &6359659684733195976
 DistanceJoint2D:
   m_ObjectHideFlags: 0
@@ -2723,7 +2803,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: -0.375, y: 0.37500006}
   m_AutoConfigureDistance: 0
-  m_Distance: 0.5
+  m_Distance: 0.4
   m_MaxDistanceOnly: 1
 --- !u!1 &7564338063112810597
 GameObject:
@@ -2819,6 +2899,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2889913770760725343
 SpriteRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2864,6 +2945,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: cf9640fd176cf2145a46394cfa6ba089, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2873,7 +2955,6 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!58 &5656439026283974362
 CircleCollider2D:
@@ -2927,8 +3008,8 @@ MonoBehaviour:
   distanceJoints: []
   springJoints: []
   hingeJoints: []
-  constraints: 4
-  mass: 0.25
+  constraints: 0
+  mass: 0.5
   drag: 0
   angularDrag: 0.05
   gravityScale: 1
@@ -2939,7 +3020,7 @@ MonoBehaviour:
   useLimits: 0
   lowerAngle: 0
   upperAngle: 15
-  collisionRadius: 0.5
+  collisionRadius: 1
 --- !u!1 &8738631420246438948
 GameObject:
   m_ObjectHideFlags: 0
@@ -3025,6 +3106,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8875451081120141697
 SpriteRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3070,6 +3152,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: cf9640fd176cf2145a46394cfa6ba089, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -3079,7 +3162,6 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!50 &3643914253525009320
 Rigidbody2D:
@@ -3172,11 +3254,11 @@ MonoBehaviour:
   autoConfigureConnectedAnchor: 0
   autoConfigureDistance: 0
   jointFrequency: 5
-  jointDamping: 0.5
+  jointDamping: 1
   useLimits: 0
   lowerAngle: 0
   upperAngle: 15
-  collisionRadius: 0.5
+  collisionRadius: 0.8
 --- !u!232 &9213790015897487068
 DistanceJoint2D:
   m_ObjectHideFlags: 0
@@ -3195,7 +3277,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: -0.375, y: -0.375}
   m_AutoConfigureDistance: 0
-  m_Distance: 0.5
+  m_Distance: 0.4
   m_MaxDistanceOnly: 1
 --- !u!1 &9023653180757076562
 GameObject:
@@ -3212,6 +3294,7 @@ GameObject:
   - component: {fileID: 2065857770142875183}
   - component: {fileID: 6684729355657460519}
   - component: {fileID: 4634137570550363249}
+  - component: {fileID: 3008792779004704655}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -3236,6 +3319,7 @@ Transform:
   - {fileID: 6922144049872465098}
   - {fileID: 2260951368480480250}
   - {fileID: 7472064303474029882}
+  - {fileID: 4996706622360559974}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1787820666353909725
@@ -3250,9 +3334,9 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.5
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
+  m_Mass: 1
+  m_LinearDamping: 0.1
+  m_AngularDamping: 0.1
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -3300,7 +3384,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.45
+  m_Radius: 0.7
 --- !u!114 &2466031785400092634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3353,15 +3437,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Project.Core.Player.Scripts.SlingshotHandler
   rigidbody2D: {fileID: 1787820666353909725}
   collider2D: {fileID: 2000150461163359129}
-  delayToAttach: 0.4
-  delayToKinematic: 0.05
   maxDragDistanceBody: 0.25
-  maxDragDistance: 1.8
-  forceMultiplier: 8
-  forceAwakeMultiplier: 0.5
-  awakeRadiusCollider: 0.6
-  defaultRadiusCollider: 0.6
-  debugAwake: 1
+  maxDragDistance: 3
+  forceMultiplier: 14
+  angleForForce: 90
+  dragForce: 10
 --- !u!114 &6684729355657460519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3394,6 +3474,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Project.Core.Player.Scripts.PlayerInputHandler
   playerInput: {fileID: 2466031785400092634}
   slingshotHandler: {fileID: 2065857770142875183}
+  dragCollider2D: {fileID: 2040037901106602208}
   EventBeginDrag:
     m_PersistentCalls:
       m_Calls:
@@ -3455,3 +3536,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &3008792779004704655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9023653180757076562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6432f3af4430497bb946e4b8acd1539f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Project.Core.Player.Scripts.StickHandler
+  rigidbody2D: {fileID: 1787820666353909725}

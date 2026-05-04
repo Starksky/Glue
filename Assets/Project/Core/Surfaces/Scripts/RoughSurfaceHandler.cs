@@ -1,86 +1,59 @@
-﻿using System;
+﻿using System.Collections.Generic;
 using Project.Core.Player.Scripts;
-using R3;
 using UnityEngine;
 
 namespace Project.Core.Surfaces.Scripts
 {
-    
-    public class RoughSurfaceHandler : MonoBehaviour
+    public class RoughSurfaceHandler : SimpleSurfaceHandler
     {
-        [SerializeField] private CompositeCollider2D colliderSurface;
-
-        private CompositeDisposable _compositeDisposable = new CompositeDisposable();
-        private RestartableTimer _restartableTimer;
-        private SlingshotHandler _slingshotHandler;
-        private bool _isAttached;
-        private CompositeDisposable _compositeDisposableTrigger = new CompositeDisposable();
-
-        private void Awake()
-        {
-            _restartableTimer = new RestartableTimer(2f);
-            _restartableTimer.OnCompleted.Subscribe(_ => _slingshotHandler.ToAwake()).AddTo(_compositeDisposable);
-        }
+        [SerializeField] private float delayApplyRough;
+        [SerializeField] private float roughScaleUnstick;
         
+        private Dictionary<StickHandler, RestartableTimer> _timers = new Dictionary<StickHandler, RestartableTimer>();
+
         private void OnDestroy()
         {
-            _compositeDisposable.Dispose();
-            _compositeDisposableTrigger.Dispose();
-            _restartableTimer.Dispose();
+            foreach (var t in _timers)
+                t.Value.Dispose();
+            _timers.Clear();
+            _timers = null;
         }
 
-        private void OnTriggerEnter2D(Collider2D other)
+        private RestartableTimer GetTimer(StickHandler body)
         {
-            if (!other.CompareTag("Player"))
-                return;
-            
-            Debug.Log("enter");
-            if (!_slingshotHandler)
-                _slingshotHandler = other.transform.root.GetComponent<SlingshotHandler>();
-            
-            _slingshotHandler.EventEnterTrigger.Subscribe(_ =>
+            if (!_timers.TryGetValue(body, out var timer))
             {
-                if (_ == colliderSurface)
-                    return;
-                
-                _restartableTimer.Stop();
-                _slingshotHandler.ToUnAwake();
-                _compositeDisposableTrigger.Clear();
-            }).AddTo(_compositeDisposableTrigger);
-
-            _restartableTimer.Start();
+                timer = new RestartableTimer();
+                _timers[body] = timer;
+            }
+            return timer;
         }
         
-        private void OnTriggerExit2D(Collider2D other)
+        protected override void Stick(StickHandler handler, Collider2D surface)
         {
-            if (!other.CompareTag("Player"))
-                return;
+            handler.StickScale = 1f;
             
-            Debug.Log("exit");
-            _compositeDisposableTrigger.Clear();
-            _restartableTimer.Stop();
-            _slingshotHandler.ToUnAwake();
+            base.Stick(handler, surface);
+            
+            GetTimer(handler)
+                .Start(delayApplyRough);
         }
 
-        private void Update()
+        protected override void UpdateStick(StickHandler handler, Collider2D surface)
         {
-            _restartableTimer.Update();
+            if (GetTimer(handler).IsCompleted)
+            {
+                handler.Rigidbody2D.gravityScale = handler.DefaultRigidbody2DParams.gravityScale;
+                handler.StickScale = roughScaleUnstick;
+            }
+            base.UpdateStick(handler, surface);
         }
-        
-        private void FixedUpdate()
+
+        protected override void Unstick(StickHandler handler, Collider2D surface)
         {
-            if (!_restartableTimer.IsCompleted)
-                return;
-            
-            var position = _slingshotHandler.transform.position;
-            var contact = colliderSurface.ClosestPoint(position);
-            var dirConnect = (contact - (Vector2)position).normalized;
-            
-            Debug.DrawRay(position,  dirConnect, Color.magenta, 1f);
-            
-            _slingshotHandler.ApplyForce(dirConnect
-                                         * -Physics2D.gravity.y
-                                         * 1f);
+            handler.StickScale = 1f;
+            GetTimer(handler).Stop();
+            base.Unstick(handler, surface);
         }
     }
 }

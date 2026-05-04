@@ -1,25 +1,40 @@
 using R3;
 using System;
+using System.Threading;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 
 public class RestartableTimer : IDisposable
 {
     private float _durationSeconds;
+    private CancellationTokenSource _cancellationTokenSource;
     private readonly Subject<Unit> _onTimerCompleted = new();
     private bool _isRunning;
     private bool _isCompleted;
     private float _timer;
 
-    public RestartableTimer(float durationSeconds)
+    private async UniTask OnRunning()
     {
-        _durationSeconds = durationSeconds;
-    }
+        _isRunning = true;
+        _cancellationTokenSource = new CancellationTokenSource();
 
-    public void Update()
-    {
-        if (!_isRunning)
-            return;
+        bool result = false;
+        while(!result)
+        {
+            if (_cancellationTokenSource?.IsCancellationRequested ?? true)
+                break;
+            
+            result = Update();
+            await UniTask.Yield();
+        }
         
+        _cancellationTokenSource?.Dispose();
+        _cancellationTokenSource = null;
+        _isRunning = false;
+    }
+    
+    private bool Update()
+    {
         if (_timer < _durationSeconds)
             _timer += Time.deltaTime;
         else
@@ -28,18 +43,20 @@ public class RestartableTimer : IDisposable
             _isRunning = false;
             _onTimerCompleted.OnNext(Unit.Default);
         }
+
+        return _isCompleted;
     }
     
     public void Start(float time)
     {
         Stop();
         _durationSeconds = time;
-        _isRunning = true;
+        OnRunning().Forget();
     }
-    public void Start() => Start(_durationSeconds);
-    
+
     public void Stop()
     {
+        _cancellationTokenSource?.Cancel();
         _isRunning = false;
         _isCompleted = false;
         _timer = 0f;
@@ -54,5 +71,6 @@ public class RestartableTimer : IDisposable
     {
         Stop();
         _onTimerCompleted?.Dispose();
+        _cancellationTokenSource?.Dispose();
     }
 }

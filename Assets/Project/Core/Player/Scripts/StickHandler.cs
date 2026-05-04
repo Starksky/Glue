@@ -1,4 +1,7 @@
 ﻿using System;
+using Project.Core.Surfaces.Scripts;
+using Project.Shared.Scripts.Extensions;
+using R3;
 using SaintsField;
 using UnityEngine;
 
@@ -9,36 +12,48 @@ namespace Project.Core.Player.Scripts
     {
         [SerializeField, ReadOnly, GetComponent(typeof(Rigidbody2D))]
         private Rigidbody2D rigidbody2D;
-        
-        [SerializeField] private float stickThreshold = 50f;
-        [SerializeField] private float stickForce = 50f; // Сила прижатия к стене
-        [SerializeField] private float unstickThreshold = 0.5f;
-        [SerializeField] private float linearDumping = 0.5f;
-        [SerializeField] private float angularDamping = 0.5f;
-        
+
+        private CompositeDisposable _compositeDisposable = new CompositeDisposable();
+        private ReactiveProperty<bool> _isStick = new ReactiveProperty<bool>();
         private Collider2D _currentSurface;
-        private bool isStick;
-        private Vector2 stickPoint;
-        private float _gravityScaleDefault;
-        private float _linearDumpingDefault;
-        private float _angularDampingDefault;
+        private BaseSurfaceHandler _currentSurfaceHandler;
+        private Rigidbody2DParams _defaultRigidbody2DParams;
+
+        public Rigidbody2D Rigidbody2D => rigidbody2D;
+        public Rigidbody2DParams DefaultRigidbody2DParams => _defaultRigidbody2DParams;
+
+        public float StickScale { get; set; } = 1f;
+        public float UnstickScale { get; set; } = 1f;
+        
         private void Awake()
         {
-            _gravityScaleDefault = rigidbody2D.gravityScale;
+            _defaultRigidbody2DParams.Set(rigidbody2D);
+            _isStick.Subscribe(OnStick).AddTo(_compositeDisposable);
         }
 
-        private void OnEnable()
+        private void OnDestroy()
         {
-            //throw new NotImplementedException();
+            _compositeDisposable.Dispose();
+            _isStick.Dispose();
         }
 
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.isTrigger)
                 return;
-            
-            if (rigidbody2D.linearVelocity.magnitude > stickThreshold)
-                AttachToSurface(other.ClosestPoint(transform.position));
+
+            if (other.TryGetComponent<BaseSurfaceHandler>(out var surfaceHandler))
+            {
+                if (_isStick.Value && _currentSurfaceHandler)
+                    _currentSurfaceHandler.OnUnstick(this, _currentSurface);
+                
+                _isStick.Value = false;
+                _currentSurface = other;
+                _currentSurfaceHandler = surfaceHandler;
+                
+                if (_currentSurfaceHandler)
+                    _isStick.Value = _currentSurfaceHandler.OnStick(this, _currentSurface);
+            }
         }
 
         private void OnTriggerStay2D(Collider2D other)
@@ -46,51 +61,35 @@ namespace Project.Core.Player.Scripts
             if (other.isTrigger)
                 return;
             
-            if (isStick)
-                stickPoint = other.ClosestPoint(transform.position);
+            if (_currentSurface == other)
+                if (!_isStick.Value && _currentSurfaceHandler)
+                    _isStick.Value = _currentSurfaceHandler.OnStick(this, _currentSurface);
         }
 
-        private void AttachToSurface(Vector2 point)
+        private void OnTriggerExit2D(Collider2D other)
         {
-            //rigidbody2D.gravityScale = 0;
+            if (other.isTrigger)
+                return;
             
-            //rigidbody2D.linearVelocity = Vector2.zero;
-            //rigidbody2D.
-            /*rigidbody2D.linearVelocity = Vector2.zero;
-            rigidbody2D.angularVelocity = 0f;*/
-            //rigidbody2D.angularDamping = 1f;
-            stickPoint = point;
-            isStick = true;
-            /*Vector2 toStickPoint = (stickPoint - (Vector2)transform.position).normalized;
-            var v = rigidbody2D.linearVelocity * toStickPoint;
-            rigidbody2D.linearVelocity += v;*/
-        }
-        
-        private void StickToSurface()
-        {
-            Vector2 toStickPoint = stickPoint - (Vector2)transform.position;
-            
-            
-            if (toStickPoint.magnitude > unstickThreshold)
-            {
-                rigidbody2D.linearDamping = _linearDumpingDefault;
-                rigidbody2D.angularDamping = _angularDampingDefault;
-                rigidbody2D.gravityScale = _gravityScaleDefault;
-                isStick = false;
-            }
-            else
-            {
-                rigidbody2D.gravityScale = 0;
-                rigidbody2D.linearDamping = linearDumping;
-                rigidbody2D.angularDamping = angularDamping;
-                rigidbody2D.AddForce(toStickPoint.normalized * stickForce, ForceMode2D.Force);
-            }
+            if (_currentSurface == other)
+                if (_isStick.Value && _currentSurfaceHandler)
+                {
+                    _currentSurfaceHandler.OnUnstick(this, _currentSurface);
+                    _isStick.Value = false;
+                }
         }
 
         private void FixedUpdate()
         {
-            if (isStick)
-                StickToSurface();
+            if (_isStick.Value && _currentSurfaceHandler)
+                _isStick.Value = _currentSurfaceHandler.OnUpdateStick(this, _currentSurface);
+        }
+
+        private void OnStick(bool stick)
+        {
+            if (stick && _currentSurfaceHandler)
+                _currentSurfaceHandler.StickParams.Apply(rigidbody2D);
+            else rigidbody2D.ApplyParams(_defaultRigidbody2DParams);
         }
     }
 }
