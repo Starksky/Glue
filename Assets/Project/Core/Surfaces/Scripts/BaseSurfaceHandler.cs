@@ -1,54 +1,47 @@
 ﻿using Project.Core.Player.Scripts;
+using SaintsField;
 using UnityEngine;
 
 namespace Project.Core.Surfaces.Scripts
 {
     public abstract class BaseSurfaceHandler : MonoBehaviour
     {
+        [SerializeField, ReadOnly, GetComponent(typeof(Rigidbody2D))]
+        protected Rigidbody2D rigidbody;
+        
         [SerializeField] private bool showDebugHitSurface;
-        [SerializeField] private float stickThreshold = 20f;
-        [SerializeField] private float unstickThreshold = 1f;
         [SerializeField] private Rigidbody2DParams stickParams;
         
         public Rigidbody2DParams StickParams => stickParams;
 
-        private bool CanStick(Rigidbody2D body) => body.linearVelocity.magnitude <= stickThreshold;
-        
         public bool OnStick(StickHandler handler, Collider2D surface)
-        {
-            if (!CanStick(handler.Rigidbody2D))
-                return false;
-            
-            Stick(handler, surface);
-            
-            return true;
-        }
+            => Stick(handler, surface);
         
         public bool OnUpdateStick(StickHandler handler, Collider2D surface) 
         {
-            var position = handler.Rigidbody2D.position;
-            var stickPoint = surface.ClosestPoint(position);
-            Vector2 dir = stickPoint - position;
-
             if (showDebugHitSurface)
-                Debug.DrawRay(position,  dir, Color.magenta, 1f);
+            {
+                var position = handler.Rigidbody2D.position;
+                var stickPoint = surface.ClosestPoint(position);
+                Vector2 dir = stickPoint - position;
+                Debug.DrawRay(position, dir, Color.magenta, 1f);
+            }
+
+            bool isStick = UpdateStick(handler, surface);
             
-            var isUnstick = dir.magnitude > unstickThreshold;
-            if (isUnstick)
+            if (!isStick)
                 Unstick(handler, surface);
-            else UpdateStick(handler, surface);
-            
-            return !isUnstick;
+
+            return isStick;
         }
         
         public void OnUnstick(StickHandler handler, Collider2D surface)
         {
             Unstick(handler, surface);
         }
-        
-        
-        protected virtual void Stick(StickHandler handler, Collider2D surface){}
-        protected virtual void UpdateStick(StickHandler handler, Collider2D surface){}
+
+        protected virtual bool Stick(StickHandler handler, Collider2D surface) => true;
+        protected virtual bool UpdateStick(StickHandler handler, Collider2D surface) => true;
         protected virtual void Unstick(StickHandler handler, Collider2D surface){}
     }
 }

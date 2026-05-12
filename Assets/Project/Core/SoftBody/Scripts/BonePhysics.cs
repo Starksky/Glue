@@ -29,12 +29,16 @@ public class BonePhysics : MonoBehaviour
     [Header("Отталкивание от мира")]
     [SerializeField] private float collisionRadius = 0.15f;
 
+    private Vector3 _localDefaultPosition;
     private Quaternion _quaternion;
     private CircleCollider2D col;
     private SpringJoint2D jointToParent;
+
+    public Rigidbody2D Rigidbody => rb;
     
     void Awake()
     {
+        _localDefaultPosition = transform.localPosition;
         _quaternion = transform.localRotation;
         col = GetComponent<CircleCollider2D>();
 
@@ -51,7 +55,12 @@ public class BonePhysics : MonoBehaviour
         ApplyJoints();
     }
 
-    void ConfigurePhysics()
+    private void OnEnable()
+    {
+        transform.localPosition = _localDefaultPosition;
+    }
+
+    private void ConfigurePhysics()
     {
         rb.mass = mass;
         rb.linearDamping = drag;
@@ -105,6 +114,8 @@ public class BonePhysics : MonoBehaviour
         }
     }
 
+   
+    
     /// <summary>
     /// Создать пружину к родительской кости
     /// </summary>
@@ -141,6 +152,7 @@ public class BonePhysics : MonoBehaviour
     }
 
     public Vector2 GetPosition() => transform.position;
+    
     public Vector2 GetTowardCenter()
     {
         var lp = (Vector2)transform.localPosition;

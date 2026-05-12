@@ -60,9 +60,9 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SecondTex:
-        m_Texture: {fileID: 2800000, guid: 1273f67805f51444986c6969e95686c0, type: 3}
-        m_Scale: {x: 2, y: 2}
-        m_Offset: {x: -0.5, y: -0.5}
+        m_Texture: {fileID: 2800000, guid: 9b528f36639e26d47b8d2c6bb65f7d9b, type: 3}
+        m_Scale: {x: -1.8, y: -2.5}
+        m_Offset: {x: 0.5, y: 0.5}
     m_Ints: []
     m_Floats:
     - _BUILTIN_AlphaClip: 0
@@ -97,6 +97,7 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _Offset: {r: 0.55, g: 0.5, b: 0, a: 0}
     - _SecondColor: {r: 1, g: 1, b: 1, a: 1}
     - _Tint: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []

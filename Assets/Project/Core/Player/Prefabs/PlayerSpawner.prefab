@@ -1,0 +1,113 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6070450990561315591
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3344481479802629161}
+  - component: {fileID: 2922613026021939138}
+  - component: {fileID: 2793131741814595760}
+  - component: {fileID: 6176605866604215902}
+  m_Layer: 0
+  m_Name: PlayerSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3344481479802629161
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6070450990561315591}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2922613026021939138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6070450990561315591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ff541268b664aee9fb0d4c19b48d038, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Project.Core.Player.Scripts.PlayerSpawner
+  catalog: {fileID: 11400000, guid: c6600115435618e4dbee7a635a6fe623, type: 2}
+  refPrefab: player
+  delayRespawn: 1
+  EventSpawned:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6176605866604215902}
+        m_TargetAssemblyTypeName: Project.Shared.Scripts.ForMessages.MonoMessageSender,
+          Assembly-CSharp
+        m_MethodName: SendMessage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 644ff5007e716c24aa8c30bc6cabab4d, type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Timeline.SignalAsset, Unity.Timeline
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2793131741814595760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6070450990561315591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b2c75ba98624fc59b11addb0c9cf656, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Project.Shared.Scripts.ForMessages.MonoMessageReceive
+  configChannels: {fileID: 11400000, guid: 45db4bfea42808e42a6870eca1163259, type: 2}
+  chanel: 
+  handlers:
+  - message: {fileID: 11400000, guid: 326afa9feaf986e46bf3a23899aeedc4, type: 2}
+    handler:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2922613026021939138}
+          m_TargetAssemblyTypeName: Project.Core.Player.Scripts.MonoPlayerSpawner,
+            Assembly-CSharp
+          m_MethodName: Respawn
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &6176605866604215902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6070450990561315591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1a06bd48a6f4948b699eb7a31989a08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Project.Shared.Scripts.ForMessages.MonoMessageSender
+  configChannels: {fileID: 11400000, guid: 45db4bfea42808e42a6870eca1163259, type: 2}
+  chanel: 

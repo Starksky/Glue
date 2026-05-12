@@ -14,10 +14,10 @@ namespace Project.Shared.Scripts.ForMessages
             
         }
 
-        public void Subscribe<T>(Action<T> handler) => Subscribe(_defaultChanel, handler);
+        public IDisposable Subscribe<T>(Action<T> handler) => Subscribe(_defaultChanel, handler);
         public void Publish<T>(T message) => Publish(_defaultChanel, message);
         
-        public void Subscribe<T>(string chanel, Action<T> handler)
+        public IDisposable Subscribe<T>(string chanel, Action<T> handler)
         {
             chanel = string.IsNullOrEmpty(chanel) ? _defaultChanel : chanel;
             if (!_messageDispatchers.TryGetValue(chanel, out var dispatcher))
@@ -26,7 +26,7 @@ namespace Project.Shared.Scripts.ForMessages
                 _messageDispatchers[chanel] = dispatcher;
             }
             
-            dispatcher.Subscribe(handler);
+            return dispatcher.Subscribe(handler);
         }
         
         public void Publish<T>(string chanel, T message)

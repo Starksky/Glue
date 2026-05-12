@@ -992,26 +992,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cd4705970277cc448af9a5c40adf747, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MonoState
-  monoStateMachine: {fileID: 0}
+  monoStateMachine: {fileID: 1461256441904442120}
   EventStart:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3396286535591510492}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
       - m_Target: {fileID: 6684729355657460519}
         m_TargetAssemblyTypeName: Project.Core.Player.Scripts.SlingshotVisualHandler,
           Assembly-CSharp
-        m_MethodName: ResetPosition
+        m_MethodName: Hide
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1021,11 +1009,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 6684729355657460519}
-        m_TargetAssemblyTypeName: Project.Core.Player.Scripts.SlingshotVisualHandler,
-          Assembly-CSharp
-        m_MethodName: Hide
-        m_Mode: 1
+      - m_Target: {fileID: 3008792779004704655}
+        m_TargetAssemblyTypeName: Project.Core.Player.Scripts.StickHandler, Assembly-CSharp
+        m_MethodName: set_IsCompensationGravity
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1310,7 +1297,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cd4705970277cc448af9a5c40adf747, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MonoState
-  monoStateMachine: {fileID: 0}
+  monoStateMachine: {fileID: 1461256441904442120}
   EventStart:
     m_PersistentCalls:
       m_Calls:
@@ -1345,6 +1332,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2572358775459947286}
+  - component: {fileID: 7919203269027648223}
   m_Layer: 0
   m_Name: SoftBody
   m_TagString: Untagged
@@ -1369,6 +1357,37 @@ Transform:
   - {fileID: 7272863406040810706}
   m_Father: {fileID: 7674609742827578133}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7919203269027648223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3396286535591510492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6caea4149fa1060488cde2763af9499b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SoftBodyHealth
+  maxStretchFactor: 1.5
+  maxShrinkFactor: 0.2
+  checkInterval: 0.2
+  EventDeformation:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7206872027641282002}
+        m_TargetAssemblyTypeName: Project.Shared.Scripts.ForMessages.MonoMessageSender,
+          Assembly-CSharp
+        m_MethodName: SendMessage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 326afa9feaf986e46bf3a23899aeedc4, type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Timeline.SignalAsset, Unity.Timeline
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3445447111361785547
 GameObject:
   m_ObjectHideFlags: 0
@@ -1507,7 +1526,7 @@ MonoBehaviour:
   configChannels: {fileID: 11400000, guid: 45db4bfea42808e42a6870eca1163259, type: 2}
   chanel: 
   handlers:
-  - message: {fileID: 11400000, guid: 644ff5007e716c24aa8c30bc6cabab4d, type: 2}
+  - message: {fileID: 11400000, guid: 326afa9feaf986e46bf3a23899aeedc4, type: 2}
     handler:
       m_PersistentCalls:
         m_Calls:
@@ -1527,16 +1546,48 @@ MonoBehaviour:
     handler:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 2065857770142875183}
-          m_TargetAssemblyTypeName: Project.Core.Player.Scripts.SlingshotHandler,
-            Assembly-CSharp
-          m_MethodName: ToAwake
-          m_Mode: 1
+        - m_Target: {fileID: 1787820666353909725}
+          m_TargetAssemblyTypeName: UnityEngine.Rigidbody2D, UnityEngine
+          m_MethodName: set_gravityScale
+          m_Mode: 4
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - message: {fileID: 11400000, guid: 6d58ad9f79b630c40ae8f47e66934ac7, type: 2}
+    handler:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1787820666353909725}
+          m_TargetAssemblyTypeName: UnityEngine.Rigidbody2D, UnityEngine
+          m_MethodName: set_gravityScale
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 1
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - message: {fileID: 11400000, guid: f93149e1f1d99f84dbc661f071212224, type: 2}
+    handler:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2065857770142875183}
+          m_TargetAssemblyTypeName: Project.Core.Player.Scripts.SlingshotHandler,
+            Assembly-CSharp
+          m_MethodName: RepeatApplyThrowForce
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 1
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
@@ -2074,50 +2125,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cd4705970277cc448af9a5c40adf747, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MonoState
-  monoStateMachine: {fileID: 0}
+  monoStateMachine: {fileID: 1461256441904442120}
   EventStart:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4634137570550363249}
-        m_TargetAssemblyTypeName: Project.Core.Player.Scripts.SlingshotInputHandler,
-          Assembly-CSharp
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 3396286535591510492}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 2065857770142875183}
         m_TargetAssemblyTypeName: Project.Core.Player.Scripts.SlingshotHandler, Assembly-CSharp
-        m_MethodName: ResetPosition
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 8517189170367957780}
-        m_TargetAssemblyTypeName: MonoState, Assembly-CSharp
-        m_MethodName: Run
+        m_MethodName: Despawn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2383,6 +2397,8 @@ GameObject:
   - component: {fileID: 8944250486012917735}
   - component: {fileID: 6900627612771204984}
   - component: {fileID: 5532494494683569438}
+  - component: {fileID: 492998801327469967}
+  - component: {fileID: 840971820474225889}
   m_Layer: 0
   m_Name: Skin
   m_TagString: Untagged
@@ -2432,7 +2448,7 @@ SpriteShapeRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 199d1a2a953571d458256f3e0f5fee9c, type: 2}
-  - {fileID: 2100000, guid: 62e450a66313f1245a52e52a818137f2, type: 2}
+  - {fileID: 2100000, guid: 503f0379b831e1248a9e94865fcee84f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2456,7 +2472,7 @@ SpriteShapeRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_ShapeTexture: {fileID: 2800000, guid: 1a0de8cb6be0e514aa1265ef09c2201c, type: 3}
+  m_ShapeTexture: {fileID: 2800000, guid: 456cf031a5fa5d34bbde9caa1d0a2823, type: 3}
   m_Sprites:
   - {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   - {fileID: 21300000, guid: 608e61deb05c54660bebf5a4dd2ee02d, type: 3}
@@ -2594,6 +2610,50 @@ MonoBehaviour:
   - {fileID: 5189656101223926801}
   - {fileID: 8273478799444185119}
   - {fileID: 931560076233661330}
+  EventFix:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 492998801327469967}
+        m_TargetAssemblyTypeName: Project.Shared.Scripts.ForMessages.MonoMessageSender,
+          Assembly-CSharp
+        m_MethodName: SendMessage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 326afa9feaf986e46bf3a23899aeedc4, type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Timeline.SignalAsset, Unity.Timeline
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &492998801327469967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6449050928888535668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1a06bd48a6f4948b699eb7a31989a08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Project.Shared.Scripts.ForMessages.MonoMessageSender
+  configChannels: {fileID: 0}
+  chanel: 
+--- !u!114 &840971820474225889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6449050928888535668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d11fe4bad88e54c44bc649b0487a0b86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FillMaterialHandler
+  shapeRenderer: {fileID: 8944250486012917735}
+  speed: 0.5
 --- !u!1 &7273638198680247182
 GameObject:
   m_ObjectHideFlags: 0
@@ -3295,6 +3355,8 @@ GameObject:
   - component: {fileID: 6684729355657460519}
   - component: {fileID: 4634137570550363249}
   - component: {fileID: 3008792779004704655}
+  - component: {fileID: 7206872027641282002}
+  - component: {fileID: 5331690897066933359}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -3335,8 +3397,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDamping: 0.1
-  m_AngularDamping: 0.1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -3439,9 +3501,12 @@ MonoBehaviour:
   collider2D: {fileID: 2000150461163359129}
   maxDragDistanceBody: 0.25
   maxDragDistance: 3
-  forceMultiplier: 14
+  maxForce: 14
   angleForForce: 90
   dragForce: 10
+  EventSpawned:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &6684729355657460519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3549,3 +3614,67 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Project.Core.Player.Scripts.StickHandler
   rigidbody2D: {fileID: 1787820666353909725}
+  slingshotHandler: {fileID: 2065857770142875183}
+  EventStiked:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7206872027641282002}
+        m_TargetAssemblyTypeName: Project.Shared.Scripts.ForMessages.MonoMessageSender,
+          Assembly-CSharp
+        m_MethodName: SendMessage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: a861a2cbd3e657042ae047d89306a37e, type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Timeline.SignalAsset, Unity.Timeline
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &7206872027641282002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9023653180757076562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1a06bd48a6f4948b699eb7a31989a08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Project.Shared.Scripts.ForMessages.MonoMessageSender
+  configChannels: {fileID: 11400000, guid: 45db4bfea42808e42a6870eca1163259, type: 2}
+  chanel: 
+--- !u!114 &5331690897066933359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9023653180757076562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36815639682c0ea4c948a7aba79b5b9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EventsCollider2D
+  typeEventCollider: 0
+  handlers:
+  - tags:
+    - Enemy
+    typeEvent: 1
+    handler:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7206872027641282002}
+          m_TargetAssemblyTypeName: Project.Shared.Scripts.ForMessages.MonoMessageSender,
+            Assembly-CSharp
+          m_MethodName: SendMessage
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 11400000, guid: 326afa9feaf986e46bf3a23899aeedc4, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Timeline.SignalAsset, Unity.Timeline
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2

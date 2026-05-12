@@ -21,6 +21,13 @@
       "dependencies": {},
       "hash": "ec31a279be809bc98f5d1ed9f2add1ce3ddc77fc"
     },
+    "com.tayx.graphy": {
+      "version": "https://github.com/Tayx94/graphy.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "1cdf31613ea294970560f0bbb2ee2d1f0cd16a22"
+    },
     "com.unity.2d.animation": {
       "version": "14.0.3",
       "depth": 1,
@@ -341,6 +348,13 @@
         "com.unity.modules.jsonserialize": "1.0.0"
       },
       "url": "https://packages.unity.com"
+    },
+    "com.yasirkula.ingamedebugconsole": {
+      "version": "https://github.com/yasirkula/UnityIngameDebugConsole.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "01a3260c652ffe766a40580c0972cf496f258b1c"
     },
     "today.comes.saintsfield": {
       "version": "https://github.com/TylerTemp/SaintsField.git",

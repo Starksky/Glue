@@ -29,29 +29,31 @@ namespace Project.Core.Surfaces.Scripts
             return timer;
         }
         
-        protected override void Stick(StickHandler handler, Collider2D surface)
+        protected override bool Stick(StickHandler handler, Collider2D surface)
         {
-            handler.StickScale = 1f;
-            
-            base.Stick(handler, surface);
+            handler.StickMultiplier = 1f;
             
             GetTimer(handler)
                 .Start(delayApplyRough);
+            
+            return base.Stick(handler, surface);
         }
 
-        protected override void UpdateStick(StickHandler handler, Collider2D surface)
+        protected override bool UpdateStick(StickHandler handler, Collider2D surface)
         {
             if (GetTimer(handler).IsCompleted)
             {
-                handler.Rigidbody2D.gravityScale = handler.DefaultRigidbody2DParams.gravityScale;
-                handler.StickScale = roughScaleUnstick;
+                handler.StickMultiplier = roughScaleUnstick;
+                handler.IsCompensationGravity = false;
             }
-            base.UpdateStick(handler, surface);
+            
+            return base.UpdateStick(handler, surface);
         }
 
         protected override void Unstick(StickHandler handler, Collider2D surface)
         {
-            handler.StickScale = 1f;
+            handler.StickMultiplier = 1f;
+            handler.IsCompensationGravity = true;
             GetTimer(handler).Stop();
             base.Unstick(handler, surface);
         }

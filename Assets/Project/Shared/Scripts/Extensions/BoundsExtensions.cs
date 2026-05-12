@@ -6,7 +6,7 @@ namespace Project.Shared.Scripts.Extensions
 {
     public static class BoundsExtensions
     {
-        public static Vector3 ClosestBoundInBounds(this Bounds self, Bounds bounds, Quaternion? rotation = null, Vector3? offset = null)
+        public static Vector3 ClosestBoundsInBounds(this Bounds self, Bounds bounds, Quaternion? rotation = null, Vector3? offset = null)
         {
             rotation ??= Quaternion.identity;
             offset ??= Vector3.zero;
