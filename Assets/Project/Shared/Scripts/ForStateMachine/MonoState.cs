@@ -10,6 +10,7 @@ public class MonoState : MonoBehaviour
     private MonoStateMachine monoStateMachine;
     
     [LayoutStart("Events", ELayout.Foldout)]
+    public UnityEvent EventEnable;
     public UnityEvent EventStart;
     public UnityEvent EventUpdate;
     public UnityEvent EventFixedUpdate;
@@ -28,7 +29,8 @@ public class MonoState : MonoBehaviour
     }
 
     public void Run() => monoStateMachine.Run(this);
-    
+
+    public void OnEnable() => EventEnable?.Invoke();
     public void StartState() => EventStart?.Invoke();
     public void UpdateState() => EventUpdate?.Invoke();
     public void FixedUpdateState() => EventFixedUpdate?.Invoke();

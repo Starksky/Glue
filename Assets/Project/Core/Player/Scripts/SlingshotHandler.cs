@@ -24,7 +24,9 @@ namespace Project.Core.Player.Scripts
         [SerializeField] private float maxForce = 8f;
         [SerializeField] private float angleForForce = 45f;
         [SerializeField] private float dragForce = 10f;
-        [SerializeField] private UnityEvent EventSpawned;
+        
+        [Space,SerializeField] private UnityEvent EventSpawned;
+        [SerializeField] private UnityEvent EventDrag;
 
         [Inject] private GameService _gameService; 
         
@@ -109,6 +111,7 @@ namespace Project.Core.Player.Scripts
             _isDragging = true;
             _currentDeltaDragBodyPosition = Vector2.zero;
             _currentDeltaDragPosition = Vector2.zero;
+            EventDrag.Invoke();
         }
         
         public void UpdateDrag(Vector2 positionMouse)

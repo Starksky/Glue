@@ -79,3 +79,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Project.Core.Installers.GameInstaller
   prefabPlayer: {fileID: 2065857770142875183, guid: c89138eac22be0e44b14643124a97847, type: 3}
+  prefabMap: {fileID: 6679851799784411969, guid: 1ba9eb774ec05cb41a067288c7e5ccc7, type: 3}

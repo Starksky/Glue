@@ -32,6 +32,7 @@ public class MovingPlatform : MonoBehaviour
     private Vector3 startPosition;
     private Vector3 endPosition;
     private Tween activeTween;
+    private Tween activeTweenRotate;
     private bool movingForward = true;
     
     private void Awake()
@@ -61,6 +62,10 @@ public class MovingPlatform : MonoBehaviour
     private void StartMovement()
     {
         activeTween?.Kill();
+        activeTweenRotate?.Kill();
+        
+        activeTween = null;
+        activeTweenRotate = null;
         
         switch (type)
         {
@@ -105,12 +110,10 @@ public class MovingPlatform : MonoBehaviour
         if (rotateToFaceCenter)
         {
             // Создаём твин для вращения с обновлением позиции
-            DOTween.To(() => 0f, x => UpdateOrbitPosition(x), 360f, orbitDuration)
+            activeTweenRotate = DOTween.To(() => 0f, x => UpdateOrbitPosition(x), 360f, orbitDuration)
                 .SetEase(Ease.Linear)
                 .SetLoops(-1, LoopType.Restart)
                 .SetUpdate(UpdateType.Fixed);
-            
-            activeTween = null;
         }
         else
         {
@@ -123,7 +126,7 @@ public class MovingPlatform : MonoBehaviour
             // Двигаем по окружности отдельным твином
             UpdateOrbitPosition(0f);
             
-            DOTween.To(() => 0f, x => UpdateOrbitPosition(x), 360f, orbitDuration)
+            activeTweenRotate = DOTween.To(() => 0f, x => UpdateOrbitPosition(x), 360f, orbitDuration)
                 .SetEase(Ease.Linear)
                 .SetLoops(-1, LoopType.Restart)
                 .SetUpdate(UpdateType.Fixed);
@@ -145,7 +148,7 @@ public class MovingPlatform : MonoBehaviour
 
     private void StartSelfRotation()
     {
-        rb.DORotate(360f, 360f / rotationDegPerSecond)
+        activeTweenRotate = rb.DORotate(360f, 360f / rotationDegPerSecond)
             .SetEase(Ease.Linear)
             .SetLoops(-1, LoopType.Restart)
             .SetUpdate(UpdateType.Fixed);
@@ -155,6 +158,7 @@ public class MovingPlatform : MonoBehaviour
     private void OnDestroy()
     {
         activeTween?.Kill();
+        activeTweenRotate?.Kill();
     }
 
 #if UNITY_EDITOR

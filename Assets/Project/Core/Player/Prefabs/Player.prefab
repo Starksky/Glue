@@ -993,6 +993,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MonoState
   monoStateMachine: {fileID: 1461256441904442120}
+  EventEnable:
+    m_PersistentCalls:
+      m_Calls: []
   EventStart:
     m_PersistentCalls:
       m_Calls:
@@ -1253,6 +1256,66 @@ DistanceJoint2D:
   m_AutoConfigureDistance: 0
   m_Distance: 0.4
   m_MaxDistanceOnly: 1
+--- !u!1 &2424854448357801721
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2942437547339776270}
+  - component: {fileID: 1857273522788530714}
+  m_Layer: 0
+  m_Name: Finish
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2942437547339776270
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2424854448357801721}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7472064303474029882}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1857273522788530714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2424854448357801721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cd4705970277cc448af9a5c40adf747, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MonoState
+  monoStateMachine: {fileID: 1461256441904442120}
+  EventEnable:
+    m_PersistentCalls:
+      m_Calls: []
+  EventStart:
+    m_PersistentCalls:
+      m_Calls: []
+  EventUpdate:
+    m_PersistentCalls:
+      m_Calls: []
+  EventFixedUpdate:
+    m_PersistentCalls:
+      m_Calls: []
+  EventExit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2626119961771449159
 GameObject:
   m_ObjectHideFlags: 0
@@ -1298,6 +1361,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MonoState
   monoStateMachine: {fileID: 1461256441904442120}
+  EventEnable:
+    m_PersistentCalls:
+      m_Calls: []
   EventStart:
     m_PersistentCalls:
       m_Calls:
@@ -1322,7 +1388,20 @@ MonoBehaviour:
       m_Calls: []
   EventExit:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4634137570550363249}
+        m_TargetAssemblyTypeName: Project.Core.Player.Scripts.SlingshotInputHandler,
+          Assembly-CSharp
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3396286535591510492
 GameObject:
   m_ObjectHideFlags: 0
@@ -1582,6 +1661,38 @@ MonoBehaviour:
           m_TargetAssemblyTypeName: Project.Core.Player.Scripts.SlingshotHandler,
             Assembly-CSharp
           m_MethodName: RepeatApplyThrowForce
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 1
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - message: {fileID: 11400000, guid: c2b2d954bb47c8c438ede65affece9c4, type: 2}
+    handler:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1857273522788530714}
+          m_TargetAssemblyTypeName: MonoState, Assembly-CSharp
+          m_MethodName: Run
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 1
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - message: {fileID: 11400000, guid: ef357906453a78249bbdbe56e6e06d1c, type: 2}
+    handler:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7023216363734692697}
+          m_TargetAssemblyTypeName: MonoState, Assembly-CSharp
+          m_MethodName: Run
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -2126,6 +2237,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MonoState
   monoStateMachine: {fileID: 1461256441904442120}
+  EventEnable:
+    m_PersistentCalls:
+      m_Calls: []
   EventStart:
     m_PersistentCalls:
       m_Calls:
@@ -2898,6 +3012,7 @@ Transform:
   - {fileID: 1410733997942421769}
   - {fileID: 7871299529992700207}
   - {fileID: 3943222943144945349}
+  - {fileID: 2942437547339776270}
   m_Father: {fileID: 7674609742827578133}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1461256441904442120
@@ -3507,6 +3622,22 @@ MonoBehaviour:
   EventSpawned:
     m_PersistentCalls:
       m_Calls: []
+  EventDrag:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7206872027641282002}
+        m_TargetAssemblyTypeName: Project.Shared.Scripts.ForMessages.MonoMessageSender,
+          Assembly-CSharp
+        m_MethodName: SendMessage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 7bc314229eec0384aa56b9139c1574f8, type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Timeline.SignalAsset, Unity.Timeline
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &6684729355657460519
 MonoBehaviour:
   m_ObjectHideFlags: 0

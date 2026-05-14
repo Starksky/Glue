@@ -15,6 +15,11 @@ MonoBehaviour:
   m_GroupName: Default Local Group
   m_GUID: acd958727e458924e9378c532edb0437
   m_SerializeEntries:
+  - m_GUID: 01ed403520c450b42b26c02d491f8efe
+    m_Address: Assets/Project/Core/Maps
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c52d9b574ca4cd643b274e35ee8ad99d
     m_Address: Assets/Project/Core/Player/Prefabs/PlayerSpawner.prefab
     m_ReadOnly: 0

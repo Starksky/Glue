@@ -27,8 +27,11 @@ namespace Project.Shared.Scripts.ForCamera
         
         private void Awake()
         {
-            
-            _gameService.PlayerTransform.Subscribe(_ => _target = _).AddTo(_compositeDisposable);
+            _gameService.PlayerTransform.Subscribe(_ =>
+            {
+                _target = _;
+                ToTargetImmediate();
+            }).AddTo(_compositeDisposable);
             _gameService.CurrentMap.Subscribe(m =>
             {
                 _map = m;
