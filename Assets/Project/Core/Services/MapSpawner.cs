@@ -17,6 +17,8 @@ namespace Project.Core.Services
         private AsyncOperationHandle<GameObject> _currentHandler;
         private GameObject _currentMap;
         
+        public bool HasMaps => _maps != null;
+        
         public MapSpawner(DiContainer container, AssetReferenceCatalog maps)
         {
             _container = container;
@@ -30,6 +32,9 @@ namespace Project.Core.Services
 
         public async UniTask LoadNextLevel()
         {
+            if (_maps == null)
+                return;
+            
             var ids = _maps.GetIDs();
             int next = _currentID + 1 >= ids.Length ? 0 : _currentID + 1;
             var nextId = ids[next];
