@@ -2,7 +2,6 @@
 using Project.Core.Services;
 using Project.Shared.Scripts.StateMachine;
 using UnityEngine;
-using UnityEngine.Events;
 using Zenject;
 
 namespace Project.Core.States
