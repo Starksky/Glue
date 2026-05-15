@@ -917,8 +917,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6679851799784411969, guid: 1ba9eb774ec05cb41a067288c7e5ccc7, type: 3}
+      propertyPath: timer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6679851799784411969, guid: 1ba9eb774ec05cb41a067288c7e5ccc7, type: 3}
       propertyPath: besTryCount
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6679851799784411969, guid: 1ba9eb774ec05cb41a067288c7e5ccc7, type: 3}
+      propertyPath: countTryForFirstPlace
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6679851799784411969, guid: 1ba9eb774ec05cb41a067288c7e5ccc7, type: 3}
+      propertyPath: countTryForSecondPlace
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7765544341501024557, guid: 1ba9eb774ec05cb41a067288c7e5ccc7, type: 3}
       propertyPath: m_Name

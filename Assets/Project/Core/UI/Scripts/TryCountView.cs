@@ -1,5 +1,4 @@
-﻿using System;
-using Project.Core.Services;
+﻿using Project.Core.Services;
 using Project.Shared.Scripts.Common;
 using R3;
 using SaintsField;
@@ -18,8 +17,7 @@ namespace Project.Core.UI.Scripts
 
         private void Awake()
         {
-            _gameService.CurrentTryCount.CombineLatest(_gameService.BestTryCount, Tuple.Create)
-                .Subscribe(tuple => valueToText.ToText(tuple.Item1, tuple.Item2)).RegisterTo(destroyCancellationToken);
+            _gameService.CurrentTryCount.Subscribe(valueToText.ToText).RegisterTo(destroyCancellationToken);
         }
     }
 }

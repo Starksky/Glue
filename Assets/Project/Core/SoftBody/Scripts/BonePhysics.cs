@@ -57,6 +57,8 @@ public class BonePhysics : MonoBehaviour
 
     private void OnEnable()
     {
+        rb.angularVelocity = 0f;
+        rb.linearVelocity = Vector2.zero;
         transform.localPosition = _localDefaultPosition;
     }
 

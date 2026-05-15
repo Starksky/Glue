@@ -1448,8 +1448,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6caea4149fa1060488cde2763af9499b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SoftBodyHealth
-  maxStretchFactor: 1.5
-  maxShrinkFactor: 0.2
+  maxStretchFactor: 1.8
+  maxShrinkFactor: 0.1
   checkInterval: 0.2
   EventDeformation:
     m_PersistentCalls:

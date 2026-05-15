@@ -18,7 +18,7 @@ namespace Project.Shared.Scripts.ForCamera
 
         private CompositeDisposable _compositeDisposable = new CompositeDisposable();
         private Transform _target;
-        private Grid _map;
+        private Grid _mapGrid;
         private Vector3? _freePosition;
         private Bounds _mapBounds;
         private Bounds _cameraBounds;
@@ -34,8 +34,8 @@ namespace Project.Shared.Scripts.ForCamera
             }).AddTo(_compositeDisposable);
             _gameService.CurrentMap.Subscribe(m =>
             {
-                _map = m;
-                _mapBounds = m ? m.GetBounds() : default;
+                _mapGrid = m.Grid;
+                _mapBounds = _mapGrid ? _mapGrid.GetBounds() : default;
                 var position = _mapBounds.center;
                 position.z = transform.position.z;
                 _mapBounds.center = position;
@@ -73,7 +73,7 @@ namespace Project.Shared.Scripts.ForCamera
             if (!isDebugBounds)
                 return;
             
-            _mapBounds = _mapBounds = _map ? _map.GetBounds() : default;
+            _mapBounds = _mapBounds = _mapGrid ? _mapGrid.GetBounds() : default;
             _cameraBounds = camera.GetBounds();
             _cameraBounds.center = transform.position;
             _mapBounds.DebugDrawBounds(Color.green);

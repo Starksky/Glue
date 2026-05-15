@@ -11591,8 +11591,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GridInitializer
   grid: {fileID: 6717737883021321848}
-  besTryCount: 5
-  bestTime: 10
+  countTryForFirstPlace: 5
+  countTryForSecondPlace: 6
+  timer: 10
 --- !u!114 &1871580067854035327
 MonoBehaviour:
   m_ObjectHideFlags: 0

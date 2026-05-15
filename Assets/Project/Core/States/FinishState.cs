@@ -11,7 +11,7 @@ namespace Project.Core.States
         protected override void OnStateStart()
         {
             base.OnStateStart();
-            _gameService.CalcStars();
+            _gameService.Finish();
         }
     }
 }

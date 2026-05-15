@@ -11,23 +11,13 @@ namespace Project.Core.Services
     {
         private ReactiveProperty<Transform> _playerTransform = new ReactiveProperty<Transform>();
         public ReadOnlyReactiveProperty<Transform> PlayerTransform => _playerTransform;
-
         
-        private ReactiveProperty<Grid> _currentMap = new ReactiveProperty<Grid>();
-        public ReadOnlyReactiveProperty<Grid> CurrentMap => _currentMap;
-
-        
-        private ReactiveProperty<int> _bestTryCount = new ReactiveProperty<int>();
-        public ReadOnlyReactiveProperty<int> BestTryCount => _bestTryCount;
-        
-        
-        private ReactiveProperty<int> _bestTime = new ReactiveProperty<int>();
-        public ReadOnlyReactiveProperty<int> BestTime => _bestTime;
+        private ReactiveProperty<MapHandler> _currentMap = new ReactiveProperty<MapHandler>();
+        public ReadOnlyReactiveProperty<MapHandler> CurrentMap => _currentMap;
         
         
         private ReactiveProperty<int> _currentTime = new ReactiveProperty<int>();
         public ReadOnlyReactiveProperty<int> CurrentTime => _currentTime;
-        
         
         private ReactiveProperty<int> _currentTryCount = new ReactiveProperty<int>();
         public ReadOnlyReactiveProperty<int> CurrentTryCount => _currentTryCount;
@@ -35,8 +25,10 @@ namespace Project.Core.Services
         private ReactiveProperty<int> _currentStars = new ReactiveProperty<int>();
         public ReadOnlyReactiveProperty<int> CurrentStars => _currentStars;
         
-        public bool IsStartedTimer => _cancellationTimer?.IsCancellationRequested == false;
         
+        public bool IsStartedTimer => _cancellationTimer?.IsCancellationRequested == false;
+
+        private MapHandler _currentMapHandler;
         private CompositeDisposable _compositeDisposable = new CompositeDisposable();
         private CancellationTokenSource _cancellationTimer;
         
@@ -50,9 +42,6 @@ namespace Project.Core.Services
             _currentTryCount.Dispose();
             _currentTime.Dispose();
             
-            _bestTime.Dispose();
-            _bestTryCount.Dispose();
-            
             _playerTransform.Dispose();
             _currentMap.Dispose();
             
@@ -60,26 +49,24 @@ namespace Project.Core.Services
         }
 
         public void SetPlayer(Transform t) => _playerTransform.Value = t;
-        public void SetMap(Grid g) => _currentMap.Value = g;
-        public void SetBestTryCount(int c) => _bestTryCount.Value = c;
-        public void SetBestTime(int t) => _bestTime.Value = t;
+        public void SetMap(MapHandler g) => _currentMap.Value = g;
         
         public void AddTryCount() => _currentTryCount.Value++;
 
         public void StartTimer() => StartTimerAsync().Forget();
         public void StopTimer() => _cancellationTimer?.Cancel();
-        public void CalcStars()
+        public void Finish()
         {
             StopTimer();
 
+            var mapHandler = _currentMap.Value;
             var maxCountStars = 3;
-            float bestCount = _bestTryCount.Value * maxCountStars;
-            float bestTime = _bestTime.Value * maxCountStars;
-            int placeCount = Mathf.FloorToInt(bestCount / _currentTryCount.Value);
-            int placeTime = Mathf.FloorToInt(bestTime / _currentTime.Value);
-            int place = placeCount <= placeTime ? placeCount : placeTime;
+            int placeCount = mapHandler.CountTryForFirstPlace >= _currentTryCount.Value ? maxCountStars :
+                mapHandler.CountTryForSecondPlace >= _currentTryCount.Value ? maxCountStars - 1 : 1;
+            bool inRangeTimer = mapHandler.Timer >= _currentTime.Value;
+            int place = inRangeTimer ? placeCount : 1;
             
-            _currentStars.Value = Mathf.Clamp(place, 1, maxCountStars);
+            _currentStars.Value = place;
         }
         
         private async UniTask StartTimerAsync()

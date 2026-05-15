@@ -1,4 +1,5 @@
-﻿using Project.Core.Surfaces.Scripts;
+﻿using System;
+using Project.Core.Surfaces.Scripts;
 using Project.Shared.Scripts.Extensions;
 using R3;
 using SaintsField;
@@ -55,6 +56,17 @@ namespace Project.Core.Player.Scripts
         {
             _defaultRigidbody2DParams.Set(rigidbody2D);
             _isStick.Subscribe(OnChangedStick).AddTo(_compositeDisposable);
+        }
+
+        private void OnEnable()
+        {
+            if (_isStick.Value && _currentSurfaceHandler)
+            {
+                _currentSurfaceHandler.OnUnstick(this, _currentSurface);
+                _isStick.Value = false;
+                _currentSurface = null;
+                _currentSurfaceHandler = null;
+            }
         }
 
         private void OnDestroy()
