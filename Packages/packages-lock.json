@@ -14,13 +14,6 @@
       "dependencies": {},
       "hash": "acc1c7bc9ea34c33b830e40316fca52553878d29"
     },
-    "com.svermeulen.extenject": {
-      "version": "https://github.com/Mathijs-Bakker/Extenject.git?path=UnityProject/Assets/Plugins/Zenject/Source",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "ec31a279be809bc98f5d1ed9f2add1ce3ddc77fc"
-    },
     "com.tayx.graphy": {
       "version": "https://github.com/Tayx94/graphy.git",
       "depth": 0,
@@ -355,6 +348,13 @@
       "source": "git",
       "dependencies": {},
       "hash": "01a3260c652ffe766a40580c0972cf496f258b1c"
+    },
+    "jp.hadashikick.vcontainer": {
+      "version": "https://github.com/hadashiA/VContainer.git?path=VContainer/Assets/VContainer",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "6e6972730ce316fab2408f20e7a160aec070e48b"
     },
     "today.comes.saintsfield": {
       "version": "https://github.com/TylerTemp/SaintsField.git",
