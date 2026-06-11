@@ -1,7 +1,8 @@
-﻿using _Project.Scripts.Contracts.Interfaces;
+﻿using _Project._Common.Scripts.Contracts.Interfaces;
+using _Project.Features.UI.MainMenu.Scripts.Contracts;
 using Cysharp.Threading.Tasks;
 
-namespace _Project.Scripts.Presentation.UI
+namespace _Project.Features.UI.MainMenu.Scripts.Presentation
 {
     public class MainMenuPresenter : IMainMenuPresenter
     {

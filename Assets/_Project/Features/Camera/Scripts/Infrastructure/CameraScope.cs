@@ -1,5 +1,6 @@
-﻿using _Project.Features.Camera.Scripts.View;
-using _Project.Scripts.Contracts.Interfaces;
+﻿using _Project._Common.Scripts.Contracts;
+using _Project._Common.Scripts.Contracts.Interfaces;
+using _Project.Features.Camera.Scripts.View;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;

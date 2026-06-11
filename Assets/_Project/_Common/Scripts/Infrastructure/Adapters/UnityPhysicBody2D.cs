@@ -1,5 +1,5 @@
-﻿using _Project.Scripts.Contracts.Data;
-using _Project.Scripts.Contracts.Interfaces;
+﻿using _Project._Common.Scripts.Contracts.Data;
+using _Project._Common.Scripts.Contracts.Interfaces;
 using JetBrains.Annotations;
 using SaintsField;
 using UnityEngine;

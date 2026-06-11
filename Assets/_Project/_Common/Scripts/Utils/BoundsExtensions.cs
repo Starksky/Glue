@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Pool;
 
-namespace _Project.Scripts.Utils
+namespace _Project._Common.Scripts.Utils
 {
     public static class BoundsExtensions
     {

@@ -1,4 +1,4 @@
-﻿using _Project.Scripts.Contracts.Interfaces;
+﻿using _Project._Common.Scripts.Contracts.Interfaces;
 using UnityEngine;
 
 namespace _Project.Features.Walls.Common.Scripts.Presentation

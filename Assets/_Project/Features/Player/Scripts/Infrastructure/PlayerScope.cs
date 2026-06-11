@@ -1,10 +1,10 @@
-﻿using _Project._Common.Scripts.Infrastructure.Adapters;
+﻿using _Project._Common.Scripts.Contracts.Interfaces;
+using _Project._Common.Scripts.Infrastructure.Adapters;
 using _Project._Common.Scripts.Infrastructure.PoolObject;
-using _Project._Common.Scripts.Infrastructure.Repositories.Player;
+using _Project.Features.Player.Scripts.Contracts;
+using _Project.Features.Player.Scripts.Infrastructure.Repositories;
 using _Project.Features.Player.Scripts.Presentation;
 using _Project.Features.Player.Scripts.View;
-using _Project.Scripts.Contracts.Interfaces;
-using _Project.Scripts.View.Player;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;

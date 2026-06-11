@@ -1,10 +1,10 @@
-﻿using _Project.Scripts.Contracts.Interfaces;
-using _Project.Scripts.Utils;
+﻿using _Project._Common.Scripts.Contracts.Interfaces;
+using _Project._Common.Scripts.Utils;
 using SaintsField;
 using UnityEngine;
 using VContainer;
 
-namespace _Project.Scripts.View.Map
+namespace _Project.Features.Map.Scripts.View
 {
     [RequireComponent(typeof(Grid))]
     public class MapView : MonoBehaviour, IMapView

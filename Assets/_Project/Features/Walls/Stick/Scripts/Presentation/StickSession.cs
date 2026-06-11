@@ -1,6 +1,6 @@
-﻿using _Project.Scripts.Utils;
+﻿using _Project._Common.Scripts.Utils;
 
-namespace _Project.Scripts.Presentation.Surfaces
+namespace _Project.Features.Walls.Stick.Scripts.Presentation
 {
     public class StickSession
     {

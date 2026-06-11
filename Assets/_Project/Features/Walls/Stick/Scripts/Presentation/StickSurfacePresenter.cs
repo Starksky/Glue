@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using _Project._Common.Scripts.Contracts.Interfaces;
 using _Project.Features.Walls.Common.Scripts.Presentation;
-using _Project.Scripts.Contracts.Interfaces;
-using _Project.Scripts.Utils;
+using _Project.Features.Walls.Stick.Scripts.Contracts;
 using UnityEngine;
 
-namespace _Project.Scripts.Presentation.Surfaces
+namespace _Project.Features.Walls.Stick.Scripts.Presentation
 {
     public class StickSurfacePresenter : BaseSurfacePresenter, IDisposable
     {

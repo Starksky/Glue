@@ -2,6 +2,7 @@
     "name": "Walls.Stick.Presentation",
     "rootNamespace": "",
     "references": [
+        "Walls.Common.Contracts",
         "Walls.Common.Presentation",
         "Walls.Stick.Contracts",
         "Common.Signals",

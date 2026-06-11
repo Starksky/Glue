@@ -3,7 +3,7 @@ using SaintsField;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Project.Core.Platforms.Scripts
+namespace _Project.Features.Platforms.Scripts
 {
     [RequireComponent(typeof(Rigidbody2D))]
     public class JumpPlatform : MonoBehaviour

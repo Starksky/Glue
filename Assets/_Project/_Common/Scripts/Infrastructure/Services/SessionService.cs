@@ -1,5 +1,5 @@
 ﻿using System;
-using _Project.Scripts.Contracts.Interfaces;
+using _Project._Common.Scripts.Contracts.Interfaces;
 using R3;
 
 namespace _Project._Common.Scripts.Infrastructure.Services

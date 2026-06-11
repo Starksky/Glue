@@ -1,0 +1,22 @@
+﻿{
+    "name": "Walls.Common.Infrastructure",
+    "rootNamespace": "",
+    "references": [
+        "Walls.Common.Presentation",
+        "Walls.Common.View",
+        "Walls.Common.Contracts",
+        "Common.Signals",
+        "Common.Contracts",
+        "Common.Utils",
+        "Common.Infrastructure"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

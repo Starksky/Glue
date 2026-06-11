@@ -1,4 +1,4 @@
-﻿namespace _Project.Scripts.Contracts.Data
+﻿namespace _Project._Common.Scripts.Contracts.Data
 {
     public record SnapshotPhysicBody2D
     {

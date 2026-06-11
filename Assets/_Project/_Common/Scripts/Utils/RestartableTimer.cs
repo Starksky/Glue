@@ -4,7 +4,7 @@ using Cysharp.Threading.Tasks;
 using R3;
 using UnityEngine;
 
-namespace _Project.Scripts.Utils
+namespace _Project._Common.Scripts.Utils
 {
     public class RestartableTimer : IDisposable
     {

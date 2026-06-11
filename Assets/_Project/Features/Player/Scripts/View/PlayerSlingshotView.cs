@@ -1,9 +1,9 @@
-﻿using System;
-using _Project.Scripts.Contracts.Interfaces;
+﻿using _Project._Common.Scripts.Contracts.Interfaces;
+using _Project.Features.Player.Scripts.Contracts;
 using UnityEngine;
 using VContainer;
 
-namespace _Project.Scripts.View.Player
+namespace _Project.Features.Player.Scripts.View
 {
     public class PlayerSlingshotView : MonoBehaviour, IPlayerSlingshotView
     {

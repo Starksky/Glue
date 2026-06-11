@@ -52,7 +52,7 @@ namespace _Project._Common.Scripts.Infrastructure.SoftBody
                     index++;
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 var bone = bones[index];
                 _shapeController.spline.SetPosition(index, _defaultPositions[index]);

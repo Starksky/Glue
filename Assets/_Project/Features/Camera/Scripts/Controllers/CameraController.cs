@@ -1,5 +1,5 @@
-﻿using _Project.Scripts.Contracts.Interfaces;
-using _Project.Scripts.Utils;
+﻿using _Project._Common.Scripts.Contracts;
+using _Project._Common.Scripts.Utils;
 using SaintsField;
 using UnityEngine;
 using UnityEngine.EventSystems;

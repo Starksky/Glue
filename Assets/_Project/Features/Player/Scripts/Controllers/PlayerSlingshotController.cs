@@ -1,4 +1,6 @@
-﻿using _Project.Scripts.Contracts.Interfaces;
+﻿using _Project._Common.Scripts.Contracts;
+using _Project._Common.Scripts.Contracts.Interfaces;
+using _Project.Features.Player.Scripts.Contracts;
 using R3;
 using UnityEngine;
 using UnityEngine.EventSystems;

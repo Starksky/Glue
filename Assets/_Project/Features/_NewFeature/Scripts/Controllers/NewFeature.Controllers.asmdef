@@ -1,9 +1,0 @@
-{
-            "name": "NewFeature.Controllers",
-            "rootNamespace": "NewFeature.Controllers",
-            "references": ["NewFeature.Presentation", "Common.Signals", "Common.Utils", "Common.Contracts"],
-            "includePlatforms": [],
-            "excludePlatforms": [],
-            "allowUnsafeCode": false,
-            "overrideReferences": false
-        }

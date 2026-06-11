@@ -1,9 +1,0 @@
-{
-            "name": "NewFeature.Presentation",
-            "rootNamespace": "NewFeature.Presentation",
-            "references": ["NewFeature.Application", "Common.Signals", "Common.Utils", "Common.Contracts"],
-            "includePlatforms": [],
-            "excludePlatforms": [],
-            "allowUnsafeCode": false,
-            "overrideReferences": false
-        }

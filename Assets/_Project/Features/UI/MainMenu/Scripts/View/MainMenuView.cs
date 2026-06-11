@@ -1,4 +1,4 @@
-﻿using _Project.Scripts.Contracts.Interfaces;
+﻿using _Project.Features.UI.MainMenu.Scripts.Contracts;
 using SaintsField;
 using UnityEngine;
 using VContainer;

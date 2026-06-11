@@ -1,4 +1,4 @@
-﻿using _Project.Scripts.Contracts.Interfaces;
+﻿using _Project._Common.Scripts.Contracts.Interfaces;
 using SaintsField;
 using UnityEngine;
 using VContainer;

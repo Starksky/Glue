@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Tilemaps;
 
-namespace _Project.Scripts.Utils
+namespace _Project._Common.Scripts.Utils
 {
     public static class GridExtensions
     {

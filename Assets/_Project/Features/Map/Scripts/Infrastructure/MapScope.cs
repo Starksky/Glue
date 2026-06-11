@@ -1,5 +1,5 @@
-﻿using _Project.Scripts.Contracts.Interfaces;
-using _Project.Scripts.View.Map;
+﻿using _Project._Common.Scripts.Contracts.Interfaces;
+using _Project.Features.Map.Scripts.View;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;

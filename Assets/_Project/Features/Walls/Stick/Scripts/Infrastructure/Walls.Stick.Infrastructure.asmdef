@@ -2,6 +2,8 @@
     "name": "Walls.Stick.Infrastructure",
     "rootNamespace": "",
     "references": [
+        "Walls.Common.Contracts",
+        "Walls.Common.Infrastructure",
         "Walls.Stick.Presentation",
         "Walls.Stick.Contracts",
         "Common.Signals",

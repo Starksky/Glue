@@ -1,9 +1,0 @@
-{
-            "name": "NewFeature.View",
-            "rootNamespace": "NewFeature.View",
-            "references": ["Common.Contracts", "Common.Signals", "Common.Utils"],
-            "includePlatforms": [],
-            "excludePlatforms": [],
-            "allowUnsafeCode": false,
-            "overrideReferences": false
-        }

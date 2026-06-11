@@ -1,5 +1,6 @@
-﻿using _Project.Scripts.Contracts.Interfaces;
-using _Project.Scripts.Utils;
+﻿using _Project._Common.Scripts.Contracts;
+using _Project._Common.Scripts.Contracts.Interfaces;
+using _Project._Common.Scripts.Utils;
 using R3;
 using SaintsField;
 using UnityEngine;

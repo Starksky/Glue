@@ -1,9 +1,0 @@
-{
-            "name": "NewFeature.Infrastructure",
-            "rootNamespace": "NewFeature.Infrastructure",
-            "references": ["NewFeature.Domain", "NewFeature.Application", "NewFeature.Presentation", "NewFeature.View", "NewFeature.Contracts", "Common.Signals", "Common.Contracts", "Common.Utils"],
-            "includePlatforms": [],
-            "excludePlatforms": [],
-            "allowUnsafeCode": false,
-            "overrideReferences": false
-        }

@@ -1,5 +1,5 @@
-﻿using _Project.Scripts.Contracts.Interfaces;
-using _Project.Scripts.Presentation.UI;
+﻿using _Project.Features.UI.MainMenu.Scripts.Contracts;
+using _Project.Features.UI.MainMenu.Scripts.Presentation;
 using VContainer;
 using VContainer.Unity;
 

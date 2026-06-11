@@ -1,5 +1,5 @@
-﻿using _Project._Common.Scripts.Infrastructure.Components;
-using _Project.Scripts.Contracts.Interfaces;
+﻿using _Project._Common.Scripts.Contracts.Interfaces;
+using _Project._Common.Scripts.Infrastructure.Components;
 using SaintsField;
 using UnityEngine;
 

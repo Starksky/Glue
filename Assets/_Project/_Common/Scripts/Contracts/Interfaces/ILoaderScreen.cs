@@ -1,4 +1,4 @@
-﻿namespace _Project.Scripts.Contracts.Interfaces
+﻿namespace _Project._Common.Scripts.Contracts.Interfaces
 {
     public interface ILoaderScreen
     {

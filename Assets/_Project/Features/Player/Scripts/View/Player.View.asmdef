@@ -2,11 +2,12 @@
     "name": "Player.View",
     "rootNamespace": "",
     "references": [
-        "Player.Presentation",
+        "Player.Contracts",
         "Common.Contracts",
         "Common.Signals",
         "Common.Utils",
-        "VContainer"
+        "VContainer",
+        "Player.Presentation"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
