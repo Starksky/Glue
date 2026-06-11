@@ -1,0 +1,21 @@
+{
+    "name": "Map.View",
+    "rootNamespace": "",
+    "references": [
+        "Map.Contracts",
+        "Common.Contracts",
+        "Common.Signals",
+        "Common.Utils",
+        "VContainer",
+        "SaintsField.Runtime"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

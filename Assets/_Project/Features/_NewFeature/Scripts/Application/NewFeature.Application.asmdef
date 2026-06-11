@@ -1,0 +1,9 @@
+{
+            "name": "NewFeature.Application",
+            "rootNamespace": "NewFeature.Application",
+            "references": ["NewFeature.Domain", "Common.Signals", "Common.Utils", "Common.Contracts"],
+            "includePlatforms": [],
+            "excludePlatforms": [],
+            "allowUnsafeCode": false,
+            "overrideReferences": false
+        }

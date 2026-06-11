@@ -1,0 +1,23 @@
+{
+    "name": "Camera.Infrastructure",
+    "rootNamespace": "",
+    "references": [
+        "Camera.View",
+        "Camera.Contracts",
+        "Camera.Controllers",
+        "Common.Signals",
+        "Common.Contracts",
+        "Common.Utils",
+        "Common.Infrastructure",
+        "VContainer"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

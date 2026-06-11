@@ -1,0 +1,9 @@
+{
+                "name": "Walls.Stick.Contracts",
+                "rootNamespace": "",
+                "references": ["Common.Contracts", "Common.Utils"],
+                "includePlatforms": [],
+                "excludePlatforms": [],
+                "allowUnsafeCode": false,
+                "overrideReferences": false
+            }

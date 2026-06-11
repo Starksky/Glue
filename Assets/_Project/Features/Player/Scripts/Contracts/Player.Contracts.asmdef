@@ -1,0 +1,17 @@
+{
+    "name": "Player.Contracts",
+    "rootNamespace": "",
+    "references": [
+        "Common.Contracts",
+        "Common.Utils"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

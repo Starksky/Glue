@@ -1,0 +1,22 @@
+{
+    "name": "UI.MainMenu.View",
+    "rootNamespace": "",
+    "references": [
+        "UI.MainMenu.Contracts",
+        "Common.Contracts",
+        "Common.Signals",
+        "Common.Utils",
+        "SaintsField.Runtime",
+        "VContainer",
+        "UniTask"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

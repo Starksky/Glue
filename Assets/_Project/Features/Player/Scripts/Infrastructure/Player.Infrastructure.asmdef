@@ -1,0 +1,24 @@
+{
+    "name": "Player.Infrastructure",
+    "rootNamespace": "",
+    "references": [
+        "Player.Presentation",
+        "Player.View",
+        "Player.Contracts",
+        "Player.Controllers",
+        "Common.Signals",
+        "Common.Contracts",
+        "Common.Utils",
+        "Common.Infrastructure",
+        "VContainer"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
