@@ -1,0 +1,20 @@
+{
+    "name": "UI.MainMenu.Presentation",
+    "rootNamespace": "",
+    "references": [
+        "UI.MainMenu.Contracts",
+        "Common.Signals",
+        "Common.Utils",
+        "Common.Contracts",
+        "UniTask"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

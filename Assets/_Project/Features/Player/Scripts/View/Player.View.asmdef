@@ -1,0 +1,20 @@
+{
+    "name": "Player.View",
+    "rootNamespace": "",
+    "references": [
+        "Player.Presentation",
+        "Common.Contracts",
+        "Common.Signals",
+        "Common.Utils",
+        "VContainer"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

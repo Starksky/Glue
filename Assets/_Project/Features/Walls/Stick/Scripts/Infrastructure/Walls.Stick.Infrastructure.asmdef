@@ -1,0 +1,22 @@
+{
+    "name": "Walls.Stick.Infrastructure",
+    "rootNamespace": "",
+    "references": [
+        "Walls.Stick.Presentation",
+        "Walls.Stick.Contracts",
+        "Common.Signals",
+        "Common.Contracts",
+        "Common.Utils",
+        "Common.Infrastructure",
+        "VContainer"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

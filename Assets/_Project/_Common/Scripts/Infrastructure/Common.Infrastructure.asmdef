@@ -1,0 +1,23 @@
+{
+    "name": "Common.Infrastructure",
+    "rootNamespace": "",
+    "references": [
+        "Common.Contracts",
+        "Common.Utils",
+        "Common.Signals",
+        "VContainer",
+        "UniTask",
+        "SaintsField.Runtime",
+        "Unity.2D.SpriteShape.Runtime",
+        "DOTween.Modules"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

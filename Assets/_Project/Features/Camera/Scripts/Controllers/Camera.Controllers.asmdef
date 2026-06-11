@@ -1,0 +1,20 @@
+{
+    "name": "Camera.Controllers",
+    "rootNamespace": "",
+    "references": [
+        "Common.Signals",
+        "Common.Utils",
+        "Common.Contracts",
+        "SaintsField.Runtime",
+        "VContainer"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
