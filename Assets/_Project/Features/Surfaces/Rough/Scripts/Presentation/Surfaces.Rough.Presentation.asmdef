@@ -1,0 +1,21 @@
+{
+    "name": "Surfaces.Rough.Presentation",
+    "rootNamespace": "",
+    "references": [
+        "Surfaces.Rough.Contracts",
+        "Common.Signals",
+        "Common.Utils",
+        "Common.Contracts",
+        "Surfaces.Common.Contracts",
+        "Surfaces.Common.Presentation"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

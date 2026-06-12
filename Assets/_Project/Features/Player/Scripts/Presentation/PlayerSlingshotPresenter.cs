@@ -79,7 +79,7 @@ namespace _Project.Features.Player.Scripts.Presentation
 
         private void FixedUpdateDrag()
         {
-            if (!_isDragging)
+            if (!_isDragging || !_physicBody2D.IsCompensationGravity)
                 return;
             
             if (Vector2.Angle(_currentContactDirection, _currentDeltaDragBodyPosition.normalized) < _config.AngleForForce)

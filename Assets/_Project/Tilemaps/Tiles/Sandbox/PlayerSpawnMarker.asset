@@ -11,7 +11,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 52b5c16b16341e3499f36191f53844c3, type: 3}
   m_Name: PlayerSpawnMarker
-  m_EditorClassIdentifier: Assembly-CSharp::_Project.Tilemaps.Scripts.SpawnMarker
-  previewSprite: {fileID: 21300000, guid: cf9640fd176cf2145a46394cfa6ba089, type: 3}
-  color: {r: 0.2392157, g: 0.6666667, b: 0.050980397, a: 1}
+  m_EditorClassIdentifier: Common.Infrastructure::_Project._Common.Scripts.Infrastructure.Tilemap.SpawnMarker
+  previewSprite: {fileID: 21300000, guid: e3bbd93a14209824caadb0992253a524, type: 3}
+  color: {r: 1, g: 1, b: 1, a: 1}
   reference: {fileID: 5186215383927086327, guid: 2e6bb12f8c9101d4fa36e44a3f741d0d, type: 3}

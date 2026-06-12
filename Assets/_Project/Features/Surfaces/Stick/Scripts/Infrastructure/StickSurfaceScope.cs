@@ -1,6 +1,6 @@
 ﻿using _Project._Common.Scripts.Contracts.Interfaces;
 using _Project.Features.Surfaces.Common.Scripts.Contracts;
-using _Project.Features.Surfaces.Stick.Scripts.Contracts;
+using _Project.Features.Surfaces.Common.Scripts.Infrastructure;
 using _Project.Features.Surfaces.Stick.Scripts.Presentation;
 using UnityEngine;
 using VContainer;

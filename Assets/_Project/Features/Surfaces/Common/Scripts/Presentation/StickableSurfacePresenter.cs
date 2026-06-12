@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using _Project._Common.Scripts.Contracts.Interfaces;
-using _Project.Features.Surfaces.Common.Scripts.Presentation;
-using _Project.Features.Surfaces.Stick.Scripts.Contracts;
+using _Project.Features.Surfaces.Common.Scripts.Contracts;
 using UnityEngine;
 
-namespace _Project.Features.Surfaces.Stick.Scripts.Presentation
+namespace _Project.Features.Surfaces.Common.Scripts.Presentation
 {
     public class StickableSurfacePresenter : BaseSurfacePresenter, IDisposable
     {
@@ -25,7 +24,7 @@ namespace _Project.Features.Surfaces.Stick.Scripts.Presentation
 
         public override bool StayContact(IPhysicBody2D body, Collider2D colliderSurface)
         {
-            var session = GetSession<StickableSession>(body);
+            var session = GetSession(body);
             
             var position = body.Position;
             var point = colliderSurface.ClosestPoint(position);
@@ -56,6 +55,7 @@ namespace _Project.Features.Surfaces.Stick.Scripts.Presentation
             body.IsCompensationGravity = false;
         }
         
+        protected StickableSession GetSession(IPhysicBody2D body) => GetSession<StickableSession>(body);
         protected T GetSession<T>(IPhysicBody2D body) where T : StickableSession, new()
         {
             if (_sessions.TryGetValue(body, out var session))
@@ -68,7 +68,7 @@ namespace _Project.Features.Surfaces.Stick.Scripts.Presentation
         }
 
         // for optimization
-        protected void DisposeSession<T>(IPhysicBody2D body) where T : StickableSession, new()
+        protected void DisposeSession(IPhysicBody2D body)
         {
             if (!_sessions.TryGetValue(body, out var session))
                 return;
@@ -77,7 +77,7 @@ namespace _Project.Features.Surfaces.Stick.Scripts.Presentation
             _sessions.Remove(body);
         }
         
-        public void Dispose()
+        public virtual void Dispose()
         {
             foreach (var session in _sessions)
                 session.Value.Dispose();

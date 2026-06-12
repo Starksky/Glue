@@ -1,6 +1,4 @@
-﻿using _Project.Features.Surfaces.Common.Scripts.Contracts;
-
-namespace _Project.Features.Surfaces.Stick.Scripts.Contracts
+﻿namespace _Project.Features.Surfaces.Common.Scripts.Contracts
 {
     public interface IStickableSurfaceConfig : IBaseSurfaceConfig
     {

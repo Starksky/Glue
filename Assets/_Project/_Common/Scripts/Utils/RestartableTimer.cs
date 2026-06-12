@@ -19,7 +19,7 @@ namespace _Project._Common.Scripts.Utils
         {
             _isRunning = true;
             _cancellationTokenSource = new CancellationTokenSource();
-            
+
             while(!_isCompleted)
             {
                 if (_cancellationTokenSource?.IsCancellationRequested ?? true)

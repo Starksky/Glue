@@ -1,10 +1,9 @@
-﻿using _Project.Features.Surfaces.Common.Scripts.Infrastructure;
-using _Project.Features.Surfaces.Stick.Scripts.Contracts;
+﻿using _Project.Features.Surfaces.Common.Scripts.Contracts;
 using UnityEngine;
 
-namespace _Project.Features.Surfaces.Stick.Scripts.Infrastructure
+namespace _Project.Features.Surfaces.Common.Scripts.Infrastructure
 {
-    [CreateAssetMenu(fileName = "StickSurfaceConfig", menuName = "Surface", order = 0)]
+    [CreateAssetMenu(fileName = "StickableSurfaceConfig", menuName = "Surface/StickableSurfaceConfig", order = 0)]
     public class StickableSurfaceConfigSo : BaseSurfaceConfigSo, IStickableSurfaceConfig
     {
         [SerializeField] private float velocityThreshold = 20f;

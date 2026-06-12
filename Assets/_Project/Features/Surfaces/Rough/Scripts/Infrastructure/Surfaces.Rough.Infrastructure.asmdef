@@ -1,0 +1,24 @@
+{
+    "name": "Surfaces.Rough.Infrastructure",
+    "rootNamespace": "",
+    "references": [
+        "Surfaces.Rough.Presentation",
+        "Surfaces.Rough.Contracts",
+        "Common.Signals",
+        "Common.Contracts",
+        "Common.Utils",
+        "Common.Infrastructure",
+        "Surfaces.Common.Contracts",
+        "Surfaces.Common.Infrastructure",
+        "VContainer"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

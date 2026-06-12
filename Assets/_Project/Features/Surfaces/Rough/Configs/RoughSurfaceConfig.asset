@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58ecb1d00ec5407985528031e01e2927, type: 3}
+  m_Name: RoughSurfaceConfig
+  m_EditorClassIdentifier: Surfaces.Rough.Infrastructure::_Project.Features.Surfaces.Rough.Scripts.Infrastructure.RoughSurfaceConfigSo
+  linearDumping: 4
+  angularDumping: 3
+  velocityThreshold: 20
+  distanceThreshold: 1
+  force: 10
+  isJoint: 0
+  delayByShift: 2
+  scaleShiftStick: 0.25
