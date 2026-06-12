@@ -1,0 +1,22 @@
+﻿{
+    "name": "Surfaces.Common.Infrastructure",
+    "rootNamespace": "",
+    "references": [
+        "Surfaces.Common.Presentation",
+        "Surfaces.Common.View",
+        "Surfaces.Common.Contracts",
+        "Common.Signals",
+        "Common.Contracts",
+        "Common.Utils",
+        "Common.Infrastructure"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

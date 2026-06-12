@@ -1,4 +1,5 @@
-﻿using _Project._Common.Scripts.Contracts.Data;
+﻿using System.Collections.Generic;
+using _Project._Common.Scripts.Contracts.Data;
 using _Project._Common.Scripts.Contracts.Interfaces;
 using JetBrains.Annotations;
 using SaintsField;
@@ -13,7 +14,8 @@ namespace _Project._Common.Scripts.Infrastructure.Adapters
 
         [SerializeField, ReadOnly, GetComponent(typeof(Rigidbody2D))]
         private Rigidbody2D body2D;
-        [CanBeNull] private SnapshotPhysicBody2D _snapshotBody2D;
+
+        private Stack<SnapshotPhysicBody2D> _snapshots = new();
 
         public Vector2 Position
         {
@@ -65,17 +67,19 @@ namespace _Project._Common.Scripts.Infrastructure.Adapters
 
         public void Snapshot()
         {
-            _snapshotBody2D = new SnapshotPhysicBody2D(Mass, LinearDamping, AngularDamping);
+            var snapshot = new SnapshotPhysicBody2D(Mass, LinearDamping, AngularDamping);
+            _snapshots.Push(snapshot);
         }
         public void RestoreToSnapshot()
         {
-            if (_snapshotBody2D == null)
+            if (_snapshots.Count == 0)
                 return;
             
-            Mass = _snapshotBody2D.Mass;
-            LinearDamping = _snapshotBody2D.LinearDamping;
-            AngularDamping = _snapshotBody2D.AngularDamping;
-            _snapshotBody2D = null;
+            var snapshot = _snapshots.Pop();
+            
+            Mass = snapshot.Mass;
+            LinearDamping = snapshot.LinearDamping;
+            AngularDamping = snapshot.AngularDamping;
         }
 
         private void FixedUpdate()

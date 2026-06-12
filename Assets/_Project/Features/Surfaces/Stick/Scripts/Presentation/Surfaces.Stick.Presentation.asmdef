@@ -1,0 +1,20 @@
+{
+    "name": "Surfaces.Stick.Presentation",
+    "references": [
+        "Surfaces.Common.Contracts",
+        "Surfaces.Common.Presentation",
+        "Surfaces.Stick.Contracts",
+        "Common.Signals",
+        "Common.Utils",
+        "Common.Contracts"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

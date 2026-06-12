@@ -1,0 +1,21 @@
+{
+    "name": "Surfaces.Common.View",
+    "rootNamespace": "",
+    "references": [
+        "Surfaces.Common.Contracts",
+        "Common.Contracts",
+        "Common.Signals",
+        "Common.Utils",
+        "SaintsField.Runtime",
+        "VContainer"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
