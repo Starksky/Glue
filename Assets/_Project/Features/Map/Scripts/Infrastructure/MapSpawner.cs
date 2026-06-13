@@ -46,10 +46,7 @@ namespace _Project.Features.Map.Scripts.Infrastructure
         private void Start()
         {
             _mapNames = catalog.GetNames();
-            
-            //for test
-            _zeroMessengerService.Publish(new MapCompleteSignal());
-            //SpawnNextMap();
+            SpawnNextMap();
         }
         
         private void InstantiateMap(GameObject prefab)
