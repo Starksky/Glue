@@ -10,7 +10,6 @@ using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using VContainer;
 using VContainer.Unity;
-using ZeroMessenger;
 
 namespace _Project.Features.Map.Scripts.Infrastructure
 {
