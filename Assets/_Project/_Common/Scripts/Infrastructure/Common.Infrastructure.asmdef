@@ -11,7 +11,9 @@
         "SaintsField.Runtime",
         "Unity.2D.SpriteShape.Runtime",
         "DOTween.Modules",
-        "Unity.Addressables"
+        "Unity.Addressables",
+        "Unity.Timeline",
+        "Generated"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
