@@ -6,10 +6,12 @@
         "Common.Utils",
         "Common.Signals",
         "VContainer",
+        "ZeroMessenger.VContainer",
         "UniTask",
         "SaintsField.Runtime",
         "Unity.2D.SpriteShape.Runtime",
-        "DOTween.Modules"
+        "DOTween.Modules",
+        "Unity.Addressables"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

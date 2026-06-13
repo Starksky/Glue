@@ -20,6 +20,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8e9af6dfa08292e4aa90eb8dbb12872d
+    m_Address: Assets/_Project/Features/Map/Prefabs/Sandbox.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 279498d21b1b9de47ae1a61f39d831f6, type: 2}
   m_SchemaSet:

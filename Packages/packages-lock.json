@@ -1,11 +1,18 @@
 {
   "dependencies": {
+    "com.annulusgames.zero-messenger.vcontainer": {
+      "version": "https://github.com/AnnulusGames/ZeroMessenger.git?path=src/ZeroMessenger.Unity/Assets/ZeroMessenger.VContainer",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "59baa7c77716534aaffea258ef99a4fb2dd48157"
+    },
     "com.cysharp.unitask": {
       "version": "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "a9e27c03d411d2fca01cc7410c24c97cd77cb539"
+      "hash": "e5acc106ee196bc5a32fb14cdf2987b0f96d11e0"
     },
     "com.github-glitchenzo.nugetforunity": {
       "version": "https://github.com/GlitchEnzo/NuGetForUnity.git?path=/src/NuGetForUnity",
@@ -354,7 +361,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "6e6972730ce316fab2408f20e7a160aec070e48b"
+      "hash": "5103bfc467dbb3d7b995dd2f2c5944e9f077dc29"
     },
     "today.comes.saintsfield": {
       "version": "https://github.com/TylerTemp/SaintsField.git",

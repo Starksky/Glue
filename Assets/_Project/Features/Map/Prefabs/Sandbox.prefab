@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6560719855296349380}
   - component: {fileID: 5119453226155190157}
   m_Layer: 0
-  m_Name: Map
+  m_Name: Sandbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -63,7 +63,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Infrastructure::_Project.Scripts.Infrastructure.Installers.MapInstaller
   parentReference:
-    TypeName: _Project._Common.Scripts.Infrastructure.Scopes.GameScope
+    TypeName: 
   autoRun: 1
   autoInjectGameObjects:
   - {fileID: 8421491687458238697}

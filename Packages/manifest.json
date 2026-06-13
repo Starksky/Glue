@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.annulusgames.zero-messenger.vcontainer": "https://github.com/AnnulusGames/ZeroMessenger.git?path=src/ZeroMessenger.Unity/Assets/ZeroMessenger.VContainer",
     "com.cysharp.unitask": "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask",
     "com.github-glitchenzo.nugetforunity": "https://github.com/GlitchEnzo/NuGetForUnity.git?path=/src/NuGetForUnity",
     "com.tayx.graphy": "https://github.com/Tayx94/graphy.git",

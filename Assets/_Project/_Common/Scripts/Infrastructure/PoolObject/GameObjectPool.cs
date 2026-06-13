@@ -9,13 +9,11 @@ namespace _Project._Common.Scripts.Infrastructure.PoolObject
 {
     public static class GameObjectPoolExtensions
     {
-        public static void RegisterGameObjectPool(this IContainerBuilder builder, LifetimeScope lifetimeScope)
-        {
-            builder.RegisterFactory<MonoPoolable, int, GameObjectPool<MonoPoolable>>(resolver =>
-                    (prefab, initCount) 
-                        => new GameObjectPool<MonoPoolable>(prefab, initCount, lifetimeScope), 
-                Lifetime.Singleton);
-        }
+        public static RegistrationBuilder RegisterGameObjectPool(this IContainerBuilder builder, LifetimeScope lifetimeScope, Lifetime lifetime)
+            => builder.RegisterFactory<MonoPoolable, int, GameObjectPool<MonoPoolable>>(resolver =>
+                (prefab, initCount) 
+                    => new GameObjectPool<MonoPoolable>(prefab, initCount, lifetimeScope), 
+                lifetime);
     }
     
     public class GameObjectPool<T> : IDisposable where T : MonoBehaviour
@@ -23,6 +21,7 @@ namespace _Project._Common.Scripts.Infrastructure.PoolObject
         private readonly Stack<T> _pool = new();
         private readonly T _prefab;
         private readonly LifetimeScope _lifetimeScope;
+        private readonly List<T> _instances = new();
 
         public GameObjectPool(T prefab, int initialCount, LifetimeScope lifetimeScope)
         {
@@ -57,21 +56,29 @@ namespace _Project._Common.Scripts.Infrastructure.PoolObject
 
         private T Create()
         {
-            if (!_prefab.TryGetComponent<LifetimeScope>(out var scope))
-                return _lifetimeScope.Container.Instantiate(_prefab);
+            T result;
             
-            var childScope = _lifetimeScope.CreateChildFromPrefab(scope);
-            return childScope.GetComponent<T>();
+            if (!_prefab.TryGetComponent<LifetimeScope>(out var scope))
+                result = _lifetimeScope.Container.Instantiate(_prefab);
+            else
+            {
+                var childScope = _lifetimeScope.CreateChildFromPrefab(scope);
+                result = childScope.GetComponent<T>();
+            }
+            
+            _instances.Add(result);
+            return result;
         }
         
         public void Dispose()
         {
-            while (_pool.Count > 0)
+            _instances.ForEach(instance =>
             {
-                var instance = _pool.Pop();
                 if (instance != null)
                     Object.Destroy(instance.gameObject);
-            }
+            });
+            _instances.Clear();
+            _pool.Clear();
         }
     }
 }

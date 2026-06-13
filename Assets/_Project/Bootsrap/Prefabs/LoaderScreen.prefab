@@ -196,12 +196,12 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
+  m_VertexColorAlwaysGammaSpace: 1
   m_UseReflectionProbes: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 100
   m_TargetDisplay: 0
 --- !u!114 &1980965958522650593
 MonoBehaviour:
@@ -251,8 +251,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: View::_Project.Scripts.View.UI.CanvasGroupFader
   canvasGroup: {fileID: 237130443794247319}
-  fadeDuration: 0.3
+  fadeDuration: 1
   disableOnFadeOut: 1
+  onFadeInStart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 845932980930527909}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  onFadeOutStart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 845932980930527909}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onFadeInComplete:
     m_PersistentCalls:
       m_Calls: []
@@ -308,7 +338,7 @@ Camera:
   field of view: 60
   orthographic: 1
   orthographic size: 5
-  m_Depth: 0
+  m_Depth: -100
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -320,7 +350,7 @@ Camera:
   m_AllowMSAA: 0
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
+  m_OcclusionCulling: 0
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
 --- !u!1 &8350553307297399611

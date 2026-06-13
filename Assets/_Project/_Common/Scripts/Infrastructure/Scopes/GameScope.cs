@@ -2,6 +2,7 @@
 using _Project._Common.Scripts.Contracts.Interfaces;
 using _Project._Common.Scripts.Infrastructure.PoolObject;
 using _Project._Common.Scripts.Infrastructure.Services;
+using _Project._Common.Scripts.Infrastructure.ZeroMessenger;
 using VContainer;
 using VContainer.Unity;
 
@@ -18,7 +19,8 @@ namespace _Project._Common.Scripts.Infrastructure.Scopes
             builder.Register<SessionService<IMapView>>(Lifetime.Singleton)
                 .As<ISessionService<IMapView>>();
 
-            builder.RegisterGameObjectPool(this);
+            builder.RegisterGameObjectPool(this, Lifetime.Singleton);
+            builder.RegisterZeroMessengerService(Lifetime.Singleton);
         }
     }
 }

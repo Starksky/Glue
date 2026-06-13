@@ -8,7 +8,10 @@
         "Common.Contracts",
         "Common.Utils",
         "Common.Infrastructure",
-        "VContainer"
+        "VContainer",
+        "Unity.Addressables",
+        "Unity.ResourceManager",
+        "UniTask"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

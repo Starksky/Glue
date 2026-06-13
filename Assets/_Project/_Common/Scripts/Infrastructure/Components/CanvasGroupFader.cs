@@ -13,6 +13,8 @@ namespace _Project._Common.Scripts.Infrastructure.Components
         [Header("Settings")]
         [SerializeField] private float fadeDuration = 0.3f;
         [SerializeField] private bool disableOnFadeOut = true;
+        [SerializeField] private UnityEvent onFadeInStart;
+        [SerializeField] private UnityEvent onFadeOutStart;
         [SerializeField] private UnityEvent onFadeInComplete;
         [SerializeField] private UnityEvent onFadeOutComplete;
     
@@ -34,6 +36,8 @@ namespace _Project._Common.Scripts.Infrastructure.Components
         /// </summary>
         public void FadeIn()
         {
+            onFadeInStart.Invoke();
+            
             // Останавливаем текущую анимацию
             _activeTween?.Kill();
         
@@ -57,6 +61,8 @@ namespace _Project._Common.Scripts.Infrastructure.Components
         /// </summary>
         public void FadeOut()
         {
+            onFadeOutStart.Invoke();
+            
             _activeTween?.Kill();
         
             // Запускаем анимацию исчезновения
