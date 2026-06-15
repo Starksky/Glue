@@ -14,7 +14,7 @@ namespace _Project.Features.Player.Scripts.Infrastructure.Repositories
         
         public float MaxDragDistanceBody => maxDragDistanceBody;
         public float MaxDragDistance => maxDragDistance;
-        public float MaxForce => maxForce;
+        public float ThrowForce => maxForce;
         public float AngleForForce => angleForForce;
         public float DragForce => dragForce;
     }

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5505d18dd19418bad6d8c12b077d4fe, type: 3}
+  m_Name: SpringSurfaceConfig
+  m_EditorClassIdentifier: Surfaces.Spring.Infrastructure::_Project.Features.Surfaces.Spring.Scripts.Infrastructure.SpringSurfaceConfigSo
+  linearDumping: 4
+  angularDumping: 3
+  velocityThreshold: 20
+  distanceThreshold: 1
+  force: 10
+  isJoint: 0
+  addThrowForcePercent: 50

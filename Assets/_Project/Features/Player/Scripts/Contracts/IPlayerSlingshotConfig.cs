@@ -4,7 +4,7 @@
     {
         public float MaxDragDistanceBody { get; }
         public float MaxDragDistance { get; }
-        public float MaxForce { get; }
+        public float ThrowForce { get; }
         public float AngleForForce { get; }
         public float DragForce { get; }
     }

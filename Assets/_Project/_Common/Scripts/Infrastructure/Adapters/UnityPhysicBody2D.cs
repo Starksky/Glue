@@ -48,7 +48,6 @@ namespace _Project._Common.Scripts.Infrastructure.Adapters
             get => body2D.angularDamping;
             set => body2D.angularDamping = value;
         }
-        
         public Vector2 LastLinearVelocity { get; private set; }
         public bool IsCompensationGravity { get; set; }
         

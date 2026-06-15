@@ -1,0 +1,22 @@
+{
+    "name": "Surfaces.Spring.Presentation",
+    "rootNamespace": "",
+    "references": [
+        "Surfaces.Spring.Contracts",
+        "Common.Signals",
+        "Common.Utils",
+        "Common.Contracts",
+        "Surfaces.Common.Contracts",
+        "Surfaces.Common.Presentation",
+        "VContainer"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
