@@ -1,0 +1,18 @@
+{
+    "name": "Surfaces.Finish.Contracts",
+    "rootNamespace": "",
+    "references": [
+        "Common.Contracts",
+        "Common.Utils",
+        "Surfaces.Common.Contracts"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

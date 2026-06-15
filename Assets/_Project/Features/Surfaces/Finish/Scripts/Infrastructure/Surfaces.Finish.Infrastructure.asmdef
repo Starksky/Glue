@@ -1,0 +1,23 @@
+{
+    "name": "Surfaces.Finish.Infrastructure",
+    "rootNamespace": "",
+    "references": [
+        "Surfaces.Finish.Presentation",
+        "Surfaces.Finish.View",
+        "Surfaces.Finish.Contracts",
+        "Common.Signals",
+        "Common.Contracts",
+        "Common.Utils",
+        "Common.Infrastructure",
+        "VContainer"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

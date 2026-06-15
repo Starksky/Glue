@@ -393,7 +393,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 17.780613, y: 10}
+  m_Size: {x: 17.786259, y: 10}
   m_EdgeRadius: 0
 --- !u!114 &440867557
 MonoBehaviour:
@@ -467,6 +467,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1862540527}
   - component: {fileID: 1862540528}
+  - component: {fileID: 1862540529}
   m_Layer: 0
   m_Name: MapSpawner
   m_TagString: Untagged
@@ -502,6 +503,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Map.Infrastructure::MapSpawner
   catalog: {fileID: 11400000, guid: 282d40b15a03e2749afe928b018d6111, type: 2}
+--- !u!114 &1862540529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1862540526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10aa3df57c4d7cd439d84b4e08c861ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Common.Infrastructure::_Project._Common.Scripts.Infrastructure.ZeroMessenger.MonoZeroMessengerReceive
+  channel: 0
+  handlers:
+  - message: {fileID: 11400000, guid: da07e1761fe7d3d4e9a9711679fdddfb, type: 2}
+    handler:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1862540528}
+          m_TargetAssemblyTypeName: _Project.Features.Map.Scripts.Infrastructure.MapSpawner,
+            Map.Infrastructure
+          m_MethodName: MonoSpawnNextMap
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

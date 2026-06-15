@@ -23,14 +23,14 @@ namespace _Project.Features.Map.Scripts.Infrastructure
         private string[] _mapNames;
         private int _currentIndexMap;
         private GameObject _currentMap;
-        private ZeroMessengerService _zeroMessengerService;
+        private IZeroMessengerService _zeroMessengerService;
 
 
         [Inject]
         public void Construct(
             LifetimeScope lifetimeScope, 
             ILoaderScreen loaderScreen,
-            ZeroMessengerService zeroMessengerService)
+            IZeroMessengerService zeroMessengerService)
         {
             _zeroMessengerService = zeroMessengerService;
             _lifetimeScope = lifetimeScope;
@@ -98,5 +98,7 @@ namespace _Project.Features.Map.Scripts.Infrastructure
             if (_handleMap.IsValid()) 
                 Addressables.Release(_handleMap);
         }
+
+        public void MonoSpawnNextMap() => SpawnNextMap();
     }
 }
