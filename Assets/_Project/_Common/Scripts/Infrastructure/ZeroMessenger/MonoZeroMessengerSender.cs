@@ -8,9 +8,10 @@ namespace _Project._Common.Scripts.Infrastructure.ZeroMessenger
     public class MonoZeroMessengerSender : MonoBehaviour
     {
         [SerializeField] private MessengerChannels channel;
-        private ZeroMessengerService _zeroMessengerService;
+        private IZeroMessengerService _zeroMessengerService;
+        
         [Inject]
-        public void Construct(ZeroMessengerService zeroMessengerService)
+        public void Construct(IZeroMessengerService zeroMessengerService)
         {
             _zeroMessengerService = zeroMessengerService;
         }

@@ -12,10 +12,10 @@ namespace _Project._Common.Scripts.Infrastructure.ZeroMessenger
     {
         [SerializeField] private MessengerChannels channel;
         [SerializeField] private MonoZeroMessengerHandler[] handlers;
-        private ZeroMessengerService _zeroMessengerService;
+        private IZeroMessengerService _zeroMessengerService;
 
         [Inject]
-        public void Construct(ZeroMessengerService zeroMessengerService)
+        public void Construct(IZeroMessengerService zeroMessengerService)
         {
             _zeroMessengerService = zeroMessengerService;
         }

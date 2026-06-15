@@ -4,14 +4,14 @@ using VContainer;
 
 namespace _Project._Common.Scripts.Infrastructure.ZeroMessenger
 {
-    
     public static class ZeroMessengerServiceExtensions
     {
         public static RegistrationBuilder RegisterZeroMessengerService(this IContainerBuilder builder, Lifetime lifetime)
-            => builder.Register<ZeroMessengerService>(lifetime);
+            => builder.Register<ZeroMessengerService>(lifetime)
+                .As<IZeroMessengerService>();
     }
-    
-    public class ZeroMessengerService : IDisposable
+
+    public class ZeroMessengerService : IDisposable, IZeroMessengerService
     {
         private readonly Dictionary<(object, Type), ZeroMessengerDispatcher> _dispatchers = new ();
         private readonly ZeroMessengerDispatcher _globalDispatcher = new ();
@@ -46,6 +46,7 @@ namespace _Project._Common.Scripts.Infrastructure.ZeroMessenger
             foreach (var pair in _dispatchers)
                 pair.Value.Dispose();
             _dispatchers.Clear();
+            _globalDispatcher.Dispose();
         }
     }
 }
