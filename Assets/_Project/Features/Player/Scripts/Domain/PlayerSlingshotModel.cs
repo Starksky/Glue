@@ -7,7 +7,7 @@ namespace _Project.Features.Player.Scripts.Domain
     public class PlayerSlingshotModel : IPlayerSlingshotModel
     {
         private float _throwForcePercent = 1f;
-        private IPlayerSlingshotConfig  _config;
+        private IPlayerSlingshotConfig _config;
         
         public float ThrowForce { get; private set; }
 
@@ -27,10 +27,12 @@ namespace _Project.Features.Player.Scripts.Domain
 
         public IPlayerSlingshotConfig GetState()
         {
-            var state = new PlayerSlingshotState(_config)
-            {
-                ThrowForce = ThrowForce
-            };
+            var state = new PlayerSlingshotState(
+                _config.MaxDragDistanceBody,
+                _config.MaxDragDistance,
+                ThrowForce,
+                _config.AngleForForce,
+                _config.DragForce);
             
             return state;
         }

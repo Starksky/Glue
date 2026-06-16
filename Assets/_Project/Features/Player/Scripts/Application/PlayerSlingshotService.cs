@@ -16,7 +16,7 @@ namespace _Project.Features.Player.Scripts.Application
         private readonly IZeroMessengerService _zeroMessengerService;
         private CompositeDisposable _disposables = new ();
         
-        public event Action<IPlayerSlingshotConfig> OnPlayerSlingshotConfigChange;
+        public event Action<IPlayerSlingshotConfig> OnPlayerSlingshotStateChange;
         
         public PlayerSlingshotService(
             IPhysicBody2D physicBody2D,
@@ -40,7 +40,7 @@ namespace _Project.Features.Player.Scripts.Application
         private void AddThrowForcePercent(int percent)
         {
             _playerSlingshotModel.AddThrowForcePercent(percent);
-            OnPlayerSlingshotConfigChange?.Invoke(GetState());
+            OnPlayerSlingshotStateChange?.Invoke(GetState());
         }
 
         public void Dispose()

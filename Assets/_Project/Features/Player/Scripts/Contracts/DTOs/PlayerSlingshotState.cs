@@ -4,7 +4,7 @@
     {
         public float MaxDragDistanceBody { get; }
         public float MaxDragDistance { get; }
-        public float ThrowForce { get; set; }
+        public float ThrowForce { get; }
         public float AngleForForce { get; }
         public float DragForce { get; }
 
@@ -15,6 +15,19 @@
             ThrowForce = config.ThrowForce;
             AngleForForce = config.AngleForForce;
             DragForce = config.DragForce;
+        }
+        public PlayerSlingshotState(
+            float maxDragDistanceBody, 
+            float maxDragDistance, 
+            float throwForce, 
+            float angleForForce,
+            float dragForce)
+        {
+            MaxDragDistanceBody = maxDragDistanceBody;
+            MaxDragDistance =  maxDragDistance;
+            ThrowForce = throwForce;
+            AngleForForce = angleForForce;
+            DragForce = dragForce;
         }
     }
 }

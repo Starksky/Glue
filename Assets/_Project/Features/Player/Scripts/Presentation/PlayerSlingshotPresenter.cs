@@ -1,9 +1,6 @@
 ﻿using System;
 using _Project._Common.Scripts.Contracts.Interfaces;
-using _Project._Common.Scripts.Infrastructure.ZeroMessenger;
-using _Project._Common.Scripts.Signals;
 using _Project.Features.Player.Scripts.Contracts;
-using R3;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
@@ -33,12 +30,12 @@ namespace _Project.Features.Player.Scripts.Presentation
         public void Initialize()
         {
             _config = _playerSlingshotService.GetState();
-            _playerSlingshotService.OnPlayerSlingshotConfigChange += OnChangeState;
+            _playerSlingshotService.OnPlayerSlingshotStateChange += OnChangeState;
         }
         
         public void Dispose()
         {
-            _playerSlingshotService.OnPlayerSlingshotConfigChange -= OnChangeState;
+            _playerSlingshotService.OnPlayerSlingshotStateChange -= OnChangeState;
         }
         
         private void OnChangeState(IPlayerSlingshotConfig config)
