@@ -2708,6 +2708,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlatformLeftRight
       objectReference: {fileID: 0}
+    - target: {fileID: 1800438939338295661, guid: cf4e7b8056e95a94f95fa939506ceb82, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2322617251085945663, guid: cf4e7b8056e95a94f95fa939506ceb82, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5
@@ -2746,6 +2750,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2322617251085945663, guid: cf4e7b8056e95a94f95fa939506ceb82, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5091830403316338399, guid: cf4e7b8056e95a94f95fa939506ceb82, type: 3}
+      propertyPath: m_ColliderPaths.Array.size
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6629150058151523525, guid: cf4e7b8056e95a94f95fa939506ceb82, type: 3}
