@@ -1,7 +1,9 @@
 ﻿using _Project._Common.Scripts.Contracts.Interfaces;
 using _Project._Common.Scripts.Infrastructure.Adapters;
 using _Project._Common.Scripts.Infrastructure.PoolObject;
+using _Project.Features.Player.Scripts.Application;
 using _Project.Features.Player.Scripts.Contracts;
+using _Project.Features.Player.Scripts.Domain;
 using _Project.Features.Player.Scripts.Infrastructure.Repositories;
 using _Project.Features.Player.Scripts.Presentation;
 using _Project.Features.Player.Scripts.View;
@@ -32,6 +34,13 @@ namespace _Project.Features.Player.Scripts.Infrastructure
             
             builder.RegisterInstance(playerSlingshotConfigSo).As<IPlayerSlingshotConfig>();
             builder.RegisterInstance(playerSlingshotVisualConfigSo).As<IPlayerSlingshotVisualConfig>();
+
+            builder.Register<PlayerSlingshotModel>(Lifetime.Scoped)
+                .As<IPlayerSlingshotModel>()
+                .AsImplementedInterfaces();
+            builder.Register<PlayerSlingshotService>(Lifetime.Scoped)
+                .As<IPlayerSlingshotService>()
+                .AsImplementedInterfaces();
             builder.Register<PlayerSlingshotPresenter>(Lifetime.Scoped)
                 .AsImplementedInterfaces();
             

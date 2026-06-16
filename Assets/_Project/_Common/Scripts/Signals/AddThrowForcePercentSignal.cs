@@ -2,6 +2,6 @@
 {
     public struct AddThrowForcePercentSignal
     {
-        public float percent;
+        public int percent;
     }
 }

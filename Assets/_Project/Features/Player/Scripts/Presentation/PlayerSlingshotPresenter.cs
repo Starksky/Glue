@@ -12,48 +12,45 @@ namespace _Project.Features.Player.Scripts.Presentation
 {
     public class PlayerSlingshotPresenter : IPlayerSlingshotPresenter, IInitializable, IFixedTickable, IDisposable
     {
-        private readonly IPlayerSlingshotConfig _config;
         private readonly IPhysicBody2D _physicBody2D;
-        private readonly IZeroMessengerService _zeroMessengerService;
+        private readonly IPlayerSlingshotService _playerSlingshotService;
 
+        private IPlayerSlingshotConfig _config;
         private bool _isDragging;
         private Vector2 _currentDeltaDragBodyPosition;
         private Vector2 _currentDeltaDragPosition;
         private Vector2 _currentContactDirection;
         private float _currentStrength;
-        private float _throwForce;
-        private float _throwForcePercents = 1f;
-        private CompositeDisposable _disposables = new ();
+        
         
         [Inject]
-        public PlayerSlingshotPresenter(IPlayerSlingshotConfig config, 
-            IPhysicBody2D physicBody2D,
-            IZeroMessengerService zeroMessengerService)
+        public PlayerSlingshotPresenter(IPhysicBody2D physicBody2D, IPlayerSlingshotService playerSlingshotService)
         {
-            _config = config;
             _physicBody2D = physicBody2D;
-            _zeroMessengerService = zeroMessengerService;
+            _playerSlingshotService = playerSlingshotService;
         }
 
         public void Initialize()
         {
-            _throwForce = _config.ThrowForce;
-            
-            _zeroMessengerService.Subscribe(_physicBody2D, 
-                (AddThrowForcePercentSignal s) => AddThrowForcePercent(s.percent))
-                .AddTo(_disposables);
+            _config = _playerSlingshotService.GetState();
+            _playerSlingshotService.OnPlayerSlingshotConfigChange += OnChangeState;
         }
         
+        public void Dispose()
+        {
+            _playerSlingshotService.OnPlayerSlingshotConfigChange -= OnChangeState;
+        }
+        
+        private void OnChangeState(IPlayerSlingshotConfig config)
+        {
+            _config = config;
+        }
+
         public void FixedTick()
         {
             FixedUpdateDrag();
         }
-
-        public void Dispose()
-        {
-            _disposables?.Dispose();
-        }
-
+        
         public Vector2 Position => _physicBody2D.Position;
         public Vector2 DeltaDrag => _currentDeltaDragPosition;
         public float StrengthDrag => _currentStrength;
@@ -119,19 +116,11 @@ namespace _Project.Features.Player.Scripts.Presentation
         private void ApplyThrowForce(Vector2 direction, float strength, Vector2 contactClosestPoint)
         {
             direction = direction.normalized;
-            Vector2 throwForce = direction * strength * _throwForce;
+            Vector2 throwForce = direction * strength * _config.ThrowForce;
             Vector2 dirContact = (_physicBody2D.Position - contactClosestPoint).normalized;
 
             _physicBody2D.AddTorqueImpulse(Vector3.Cross(dirContact, throwForce.normalized).z * throwForce.magnitude);
             _physicBody2D.AddImpulse(throwForce);
-        }
-
-        private void AddThrowForcePercent(float percent)
-        {
-            _throwForcePercents += percent / 100f;
-            _throwForcePercents = _throwForcePercents < 0f ? 1f : _throwForcePercents;
-            _throwForce = _config.ThrowForce * _throwForcePercents;
-            _throwForce = _throwForce <= 0 ? _config.ThrowForce : _throwForce;
         }
     }
 }

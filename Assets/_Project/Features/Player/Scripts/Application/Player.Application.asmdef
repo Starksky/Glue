@@ -1,17 +1,11 @@
 {
-    "name": "Player.Infrastructure",
+    "name": "Player.Application",
     "rootNamespace": "",
     "references": [
-        "Player.Domain",
-        "Player.Application",
-        "Player.Presentation",
-        "Player.View",
         "Player.Contracts",
-        "Player.Controllers",
         "Common.Signals",
-        "Common.Contracts",
         "Common.Utils",
-        "Common.Infrastructure",
+        "Common.Contracts",
         "VContainer"
     ],
     "includePlatforms": [],

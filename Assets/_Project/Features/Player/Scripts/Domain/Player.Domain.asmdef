@@ -1,0 +1,8 @@
+{
+                "name": "Player.Domain",
+                "references": ["Player.Contracts", "Common.Contracts"],
+                "includePlatforms": [],
+                "excludePlatforms": [],
+                "allowUnsafeCode": false,
+                "overrideReferences": false
+            }
