@@ -470,7 +470,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 1
   m_UseReflectionProbes: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -507,7 +507,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6e2ef9ebd284b149137bf3da907885b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: View::_Project.Scripts.View.UI.MainMenuView
-  newGameScene: 2.Sandbox
+  newGameScene: 2.Game
 --- !u!1 &1633806010
 GameObject:
   m_ObjectHideFlags: 0
