@@ -7,7 +7,8 @@
         "Player.Application",
         "Player.Contracts",
         "Player.Domain",
-        "Player.Presentation"
+        "Player.Presentation",
+        "Common.Contracts"
     ],
     "includePlatforms": [
         "Editor"
@@ -16,7 +17,8 @@
     "allowUnsafeCode": false,
     "overrideReferences": true,
     "precompiledReferences": [
-        "nunit.framework.dll"
+        "nunit.framework.dll",
+        "NSubstitute.dll"
     ],
     "autoReferenced": false,
     "defineConstraints": [
